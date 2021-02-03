@@ -12,8 +12,9 @@ body {
 }
 
 .menu{
+
     font-family: sans-serif;
-    margin: 30px;
+    margin: 10px;
     display: inline;
     
 }
@@ -28,7 +29,6 @@ footer{
     padding: 4px;
     height:60px;
     bottom: 0;
-    margin: auto;
     background-color: #ffd461;
     clear: both;
     position: fixed;
@@ -38,9 +38,11 @@ table{
     font-family: sans-serif;
     margin-bottom: 10px;
     background-color: chocolate;
+    margin-left: 10px;
 }
 
 h2{
+    margin-left: 20px;
     font-family: sans-serif;
     font-style: italic;
     font-weight: bold;
@@ -48,13 +50,12 @@ h2{
 
 .descrição{
     font-family: sans-serif;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 li{
-    margin: 16px;
+    margin: 20px;
     font-family: sans-serif;
-    background-color: #ffd461;
     padding: 2px; 
     width: 50px; 
 }
@@ -81,3 +82,25 @@ p{
     margin: 10px;
 }
 
+.foto{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+button{
+   margin: 5px 0 0 20px;
+   background-color: #ffd461;
+
+}
+
+input{
+    margin: 5px;
+}
+
+.vendas{
+    margin-left: 20px;
+}
+
+.add-produto{
+    margin-left: 20px;
+}
