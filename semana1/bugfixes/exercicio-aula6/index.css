@@ -36,7 +36,7 @@ div>p:first-child {
 }
 
 div img {
-    background: black;
+    
 }
 
 .botao-amarelo {
@@ -124,6 +124,7 @@ td button {
     color: black;
 }
 
+
 .container-do-search {
     margin-top: 20px;
     height: 100px;
@@ -142,4 +143,9 @@ td button {
 
 #back-button:hover {
     background-color: #635a3d
+}
+
+.imagens-tabela{
+    height: 60px;
+    width: 60px;
 }
