@@ -150,3 +150,11 @@ td button {
     height: 60px;
     width: 60px;
 }
+
+.botao-comprar:hover{
+    background-color: #c44f00;
+}
+
+.botao-comprar:active{
+    color: white;
+}
