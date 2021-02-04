@@ -158,3 +158,10 @@ td button {
 .botao-comprar:active{
     color: white;
 }
+
+.pesquisar{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: 0;
+}
