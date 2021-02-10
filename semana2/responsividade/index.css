@@ -5,127 +5,221 @@ body {
     margin: 0;
 }
 
-#main-container{
+div {
+    border: 1px solid black;
+}
+
+#main-container {
     display: grid;
-    grid-template-rows: 70px repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    font-size: 30px;
+    
+}
+
+.blue-block-1, .blue-block-2, .green-block-1, .green-block-2, .yellow-block-1, .yellow-block-2, .black-block-1, .black-block-2, .white-block-1, .white-block-2, .white-block-3 {
+    margin: 10px;
 }
 
 #first-block {
-    display: grid;
     background-color: red;
-    width: 100%;
-    border: 1px solid black;
+    height: 12.5vh;
+    grid-column: 1/-1;
 }
 
-.second-block{
+.blue-block-1 {
     display: grid;
-    grid-row: 2/4;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    padding: 30px;
+    background-color: blue;
+    height: 12.5vh;
+    grid-column: 1/3;
+    align-items: center;
+    justify-content: center;
     
 }
 
-.blue-block {
-    background-color: blue;
+.yellow-block-1 {
     display: grid;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    height: 12.5vh;
-}
-
-.yellow-block {
     background-color: yellow;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
     height: 12.5vh;
+    grid-column: 3/5;
+    align-items: center;
+    justify-content: center;
 }
 
-.green-block {
+.green-block-1 {
+    display: grid;
     background-color: green;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
     height: 12.5vh;
+    grid-column: 5/7;
+    align-items: center;
+    justify-content: center;
 }
 
-.third-block{
+.blue-block-2 {
     display: grid;
-    grid-row: 4/6;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    padding: 30px 30px 30px 30px;
-
+    background-color: blue;
+    height: 12.5vh;
+    grid-column: 1/3;
+    align-items: center;
+    justify-content: center;
 }
 
-.black-block {
+.yellow-block-2 {
+    display: grid;
+    background-color: yellow;
+    height: 12.5vh;
+    grid-column: 3/5;
+    align-items: center;
+    justify-content: center;
+}
+
+.green-block-2 {
+    display: grid;
+    background-color: green;
+    height: 12.5vh;
+    grid-column: 5/7;
+    align-items: center;
+    justify-content: center;
+}
+
+.black-block-1 {
+    display: grid;
     background-color: black;
     color: white;
-    display: grid;
-    justify-content: center;
+    height: 25vh;
+    grid-column: 1/4;
     align-items: center;
-    border: 1px solid black;
+    justify-content: center;
+
 }
 
-
-.last-block{
+.black-block-2 {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    padding: 0 30px 30px 30px;
-    
-
+    background-color: black;
+    color: white;
+    height: 25vh;
+    grid-column: 4/7;
+    align-items: center;
+    justify-content: center;
 }
 
-.white-block {
+.white-block-1 {
+    display: grid;
     background-color: white;
-    border: 1px solid black;
-    display: grid;
-    justify-content: center;
-    align-items: center;
     height: 12.5vh;
+    grid-column: 1/3;
+    align-items: center;
+    justify-content: center;
 }
 
-@media screen and (min-device-width:320px ) and (max-device-width: 420px){
-    
-    #main-container{
-        display: flex;
-        flex-direction: column;
+.white-block-2 {
+    display: grid;
+    background-color: white;
+    height: 12.5vh;
+    grid-column: 3/5;
+    align-items: center;
+    justify-content: center;
+}
+
+.white-block-3 {
+    display: grid;
+    background-color: white;
+    height: 12.5vh;
+    grid-column: 5/7;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (min-device-width: 421px) and (max-device-width: 800px) {
+    .blue-block-1 {
+        display: grid;
+        background-color: blue;
+        height: 12.5vh;
+        grid-column: 1/4;
+        align-items: center;
+        justify-content: center;
+    }
+    .yellow-block-1 {
+        display: grid;
+        background-color: yellow;
+        height: 12.5vh;
+        grid-column: 4/7;
+        align-items: center;
+        justify-content: center;
+    }
+    .green-block-1 {
+        display: grid;
+        background-color: green;
+        height: 12.5vh;
+        grid-column: 1/-1;
+        align-items: center;
+        justify-content: center;
+    }
+    .blue-block-2 {
+        display: grid;
+        background-color: blue;
+        height: 12.5vh;
+        grid-column: 1/4;
+        align-items: center;
+        justify-content: center;
+    }
+    .yellow-block-2 {
+        display: grid;
+        background-color: yellow;
+        height: 12.5vh;
+        grid-column: 4/7;
+        align-items: center;
+        justify-content: center;
+    }
+    .green-block-2 {
+        display: grid;
+        background-color: green;
+        height: 12.5vh;
+        grid-column: 1/-1;
+        align-items: center;
+        justify-content: center;
     }
 
-    #first-block {
-        background-color: red;
-        width: 100%;
-        border: 1px solid black;
-        display: flex;
-        flex-direction: column;
-
+    .white-block-1 {
+        display: grid;
+        background-color: white;
+        height: 12.5vh;
+        grid-column: 1/4;
+        align-items: center;
+        justify-content: center;
     }
-    
-    .second-block{
+    .white-block-2 {
+        display: grid;
+        background-color: white;
+        height: 12.5vh;
+        grid-column: 4/7;
+        align-items: center;
+        justify-content: center;
+    }
+    .white-block-3 {
+        display: grid;
+        background-color: white;
+        height: 12.5vh;
+        grid-column: 1/-1;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-device-width: 320px) and (max-device-width: 420px) {
+    #main-container {
         display: flex;
         flex-direction: column;   
     }
 
-    .third-block{
-        display: flex;
-        flex-direction: column;
-
-    }
-    .last-block{
-        display: flex;
-        flex-direction: column;
+    .black-block-1 {
+        height: 12.5vh;
     
     }
-
-    .black-block {
-        display: flex;
+    
+    .black-block-2 {
         height: 12.5vh;
-        padding: 0;
     }
-}
 
+
+}
