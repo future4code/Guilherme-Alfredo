@@ -1,0 +1,131 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+#main-container{
+    display: grid;
+    grid-template-rows: 70px repeat(5, 1fr);
+}
+
+#first-block {
+    display: grid;
+    background-color: red;
+    width: 100%;
+    border: 1px solid black;
+}
+
+.second-block{
+    display: grid;
+    grid-row: 2/4;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 30px;
+    
+}
+
+.blue-block {
+    background-color: blue;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    height: 12.5vh;
+}
+
+.yellow-block {
+    background-color: yellow;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    height: 12.5vh;
+}
+
+.green-block {
+    background-color: green;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    height: 12.5vh;
+}
+
+.third-block{
+    display: grid;
+    grid-row: 4/6;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 30px 30px 30px 30px;
+
+}
+
+.black-block {
+    background-color: black;
+    color: white;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+
+.last-block{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 0 30px 30px 30px;
+    
+
+}
+
+.white-block {
+    background-color: white;
+    border: 1px solid black;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 12.5vh;
+}
+
+@media screen and (min-device-width:320px ) and (max-device-width: 420px){
+    
+    #main-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #first-block {
+        background-color: red;
+        width: 100%;
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+
+    }
+    
+    .second-block{
+        display: flex;
+        flex-direction: column;   
+    }
+
+    .third-block{
+        display: flex;
+        flex-direction: column;
+
+    }
+    .last-block{
+        display: flex;
+        flex-direction: column;
+    
+    }
+
+    .black-block {
+        display: flex;
+        height: 12.5vh;
+        padding: 0;
+    }
+}
+
