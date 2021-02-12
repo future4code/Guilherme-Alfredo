@@ -1,0 +1,108 @@
+* {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-color: cornflowerblue;
+    ;
+}
+
+main {
+    background-color: cornflowerblue;
+}
+
+header {
+    background-color: silver;
+    height: 50px;
+    margin-top: 0;
+    padding-top: 20px;
+    text-decoration: none;
+    position: static;
+    width: 100%;
+}
+
+.menu {
+    display: inline;
+    margin-left: 50px;
+    margin-top: 50px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#foto-gui {
+    width: 150px;
+    height: 200px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+footer {
+    position: static;
+    bottom: 0;
+    background-color: silver;
+    width: 100%;
+    height: 120px;
+}
+
+.redes-sociais {
+    height: 40px;
+    width: 40px;
+    padding: 20px;
+}
+
+#sobre-mim {
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#rodape {
+    padding: 5px;
+}
+
+.galeria-de-projetos {
+    height: 100px;
+    width: 200px;
+}
+
+#projetos {
+    margin-left: 30px;
+}
+
+#img-labenu {
+    margin: auto;
+    display: block;
+    height: 500px;
+    width: 900px;
+}
+
+.txt-projeto {
+    text-align: center;
+}
+
+.imagens-loja {
+    height: 200px;
+    width: 400px;
+    margin: auto;
+    margin: 50px;
+    margin-left: 170px;
+}
+
+.imagens-loja2 {
+    height: 200px;
+    width: 400px;
+    margin: auto;
+    margin: 50px;
+    margin-left: 170px;
+}
+
+.img-debug {
+    height: 200px;
+    width: 400px;
+    margin: auto;
+    margin: 50px;
+    margin-left: 180px;
+}
+
+button {
+    margin-bottom: 200px;
+}
