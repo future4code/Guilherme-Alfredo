@@ -9,7 +9,7 @@
 
 //Exercícios de escrita de código:
 
-//Exercício 1 
+// Exercício 1 
 
 let nome;
 let idade;
@@ -28,7 +28,7 @@ console.log(idade)
 
 console.log("Olá", nome, "você tem", idade, "anos")
 
-//Exercício 2 
+// //Exercício 2 
 
 let endereço = prompt("Qual o seu endereço?")
 console.log("Endereço:", endereço)
@@ -45,7 +45,7 @@ console.log("Animal Preferido:", animalPreferido)
 let timeDoCoração = prompt("Qual o seu time do coração?")
 console.log("Time do Coração:", timeDoCoração)
 
-//Exercício 3 
+// //Exercício 3 
 
 let comidas = ["Hamburger", "Churrasco", "Pizza", "Estrogonofe", "Comida Japonesa"];
 console.log("Essas são minhas comidas favoritas:", comidas)
@@ -55,4 +55,14 @@ console.log("Sua comida favorita é:", comidaFavorita)
 
 comidas[1] = comidaFavorita
 console.log("Comida do usuário na lista:", comidas)
+
+let perguntas = ["Você está feliz hoje?", "Você tem o cabelo raspado?", "Você usa óculos?"]
+console.log(perguntas)
+
+let respostas = [true, false, true]
+console.log(respostas)
+
+console.log(perguntas[0], respostas[0])
+console.log(perguntas[1], respostas[1])
+console.log(perguntas[2], respostas[2])
 
