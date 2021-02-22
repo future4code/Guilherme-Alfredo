@@ -45,3 +45,14 @@ console.log("Animal Preferido:", animalPreferido)
 let timeDoCoração = prompt("Qual o seu time do coração?")
 console.log("Time do Coração:", timeDoCoração)
 
+//Exercício 3 
+
+let comidas = ["Hamburger", "Churrasco", "Pizza", "Estrogonofe", "Comida Japonesa"];
+console.log("Essas são minhas comidas favoritas:", comidas)
+
+let comidaFavorita = prompt("Qual a sua comida favorita?")
+console.log("Sua comida favorita é:", comidaFavorita)
+
+comidas[1] = comidaFavorita
+console.log("Comida do usuário na lista:", comidas)
+
