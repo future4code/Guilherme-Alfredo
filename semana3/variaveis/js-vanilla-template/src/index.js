@@ -18,13 +18,32 @@ console.log(typeof idade)
 // foi impresso o tipo "undefined". 
 // Isso aconteceu porque não foi atribuído nenhum valor às variáveis criadas. 
 
-let nomeInformado = prompt("Qual o seu nome?")
-console.log(nomeInformado)
+// nome = prompt("Qual o seu nome?")
+// console.log(nome)
 
-let idadeInformada = prompt("Qual o sua idade?")
-console.log(idadeInformada) 
+// idade = prompt("Qual o sua idade?")
+// console.log(idade) 
 // Agora foram impressos os valores digitados pelo usuário. 
 // Isso porque neste caso foram atribuídos valores para as variáveis. 
 
-console.log("Olá", nomeInformado, "você tem", idadeInformada, "anos")
+// console.log("Olá", nome, "você tem", idade, "anos")
+
+//Exercício 2 
+
+// let endereço = prompt("Qual o seu endereço?")
+// console.log("Endereço:", endereço)
+
+// let corFavorita = prompt("Qual a sua cor favorita?")
+// console.log("Cor favorita:", corFavorita)
+
+// let signo = prompt("Qual o seu signo?")
+// console.log("Signo:", signo)
+
+// let animalPreferido = prompt("Qual animal preferido?")
+// console.log("Animal Preferido:", animalPreferido)
+
+// let timeDoCoração = prompt("Qual o seu time do coração?")
+// console.log("Time do Coração:", timeDoCoração)
+
+//Exercício 3 
 
