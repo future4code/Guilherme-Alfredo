@@ -54,3 +54,58 @@ let nome = prompt ("Digite seu nome")
 let email = prompt ("Digite seu email")
 console.log("O email " + email + " foi cadastrado com sucesso. Seja bem-vinda(o), " + nome + "!")
 
+// DESAFIO 1
+let GRAUS_FAHRENHEIT = 77
+let KELVIN = (GRAUS_FAHRENHEIT - 32)*5/9 + 273.15
+console.log("Conversão de 77°F em K:", KELVIN)
+
+let grausCelsius = 80
+let grausF = (grausCelsius)*9/5 + 32
+console.log("Conversão de 80°C em F:", grausF)
+
+let grausCelsius2 = 30
+let grausF2 = (grausCelsius2)*9/5 + 32
+console.log("Conversão de 30°C em F:", grausF2)
+let kelvin = (grausCelsius2) + 273.15
+console.log("Conversão de 30°C em K:", kelvin)
+
+let valorUsuario = prompt ("Digite um valor em °C para conversão em F e K")
+console.log(typeof Number (valorUsuario))
+let conversaoKelvin = Number (valorUsuario) + 273.15
+console.log("Conversão do valor digitado em F: ", (valorUsuario)*9/5 + 32) 
+console.log("Conversão do valor digitado em K: ", conversaoKelvin)
+
+// DESAFIO 2
+let KWH = 280 
+let consumoKWH = Number (KWH) *0.05
+console.log("Valor a ser pago por uma residencia que consome 280 quilowatt-hora de energia: ",consumoKWH, " Reais")
+
+let desconto = Number (consumoKWH) *0.15
+let desconto2 = Number (consumoKWH) - (desconto)
+console.log("Valor a ser pago com desconto de 15%: ",desconto2)
+
+// DESAFIO 3 
+let libra = 20
+let kg = Number (libra) *0.4536
+console.log("20lb equivalem a: ",kg, " kg")
+
+let oz = 10.5
+let quilograma = Number (oz) *0.0283495
+console.log("10.5oz equivalem a: ",quilograma, " kg")
+
+let milha = 100
+let metro = Number (milha) *1609.34
+console.log("100mi equivalem a: ",metro, " m")
+
+let ft = 50
+let m = Number (ft) *0.3048
+console.log("50ft equivalem a: ",m, " m")
+
+let gal = 103.56
+let litro = Number (gal) *3.78541
+console.log("103.56gal equivalem a: ",litro, " l")
+
+let xicara = prompt ("Digite o número de xícaras que deseja converter em litros")
+let li = Number (xicara) *0.24
+console.log("450 xic equivalem a: ",li, " l")
+
