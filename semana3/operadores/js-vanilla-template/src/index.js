@@ -48,3 +48,9 @@ let tarefaRealizada = prompt ("Digite o índice da tarefa que você já realizou
 listaDeTarefas.splice(tarefaRealizada, 1)
 console.log(listaDeTarefas)
 
+// Exercício 4 
+
+let nome = prompt ("Digite seu nome")
+let email = prompt ("Digite seu email")
+console.log("O email " + email + " foi cadastrado com sucesso. Seja bem-vinda(o), " + nome + "!")
+
