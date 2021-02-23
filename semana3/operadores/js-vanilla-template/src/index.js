@@ -32,3 +32,19 @@ console.log( "Resto da divisão do número digitado por 2: ", numeroPar %= 2)
 
 // o resto sempre da "0", porque quando dividimos um número par por "2" ele não terá resto. 
 // caso o  usuário escreva um número ímpar, o programa imprime na tela o valor do "resto da divisão"
+
+// Exercício 3 
+
+let listaDeTarefas = []
+let tarefa1 = prompt ("Digite uma tarefa que você precisa realizar hoje (índice 0)")
+let tarefa2 = prompt ("Digite uma segunda tarefa que você precisa realizar hoje (índice 1)")
+let tarefa3 = prompt ("Digite uma terceira tarefa que você precisa realizar hoje (índice 2)")
+
+listaDeTarefas.push(tarefa1, tarefa2, tarefa3)
+console.log(listaDeTarefas)
+
+let tarefaRealizada = prompt ("Digite o índice da tarefa que você já realizou utilizando o número que corresponde ao índice da tarefa (0, 1, 2)")
+
+listaDeTarefas.splice(tarefaRealizada, 1)
+console.log(listaDeTarefas)
+
