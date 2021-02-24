@@ -18,7 +18,7 @@
 
 //Exercícios de escrita de código
 
-//Exercício 4
+// Exercício 4
 const idade = Number (prompt ("Digite sua idade"))
 
 if(idade >= 18){
@@ -65,5 +65,224 @@ if (filme === "Fantasia" && preço < 15) {
     console.log("Bom Filme! ", "com", snack)
 } else{
     console.log("Escolha outro filme :(")
+}
+
+// Desario 2 
+
+const nomeCompleto = prompt ("Informe seu nome completo")
+const tipoDeJogo = prompt ("Selecione o tipo de jogo: IN (internacional) ou DO (doméstico)")
+const etapaDoJogo = prompt ("Selecione a etapa do jogo: SF (semi-final), DT (decisão de terceiro lugar) ou FI (final)")
+const categoria = Number (prompt ("Informe a categoria do ingresso: 1, 2, 3 ou 4"))
+const quantidaDeIngressos = Number (prompt ("Informe a quantidade de ingressos que deseja comprar"))
+let valor 
+let valorTotal  
+let valorDollar 
+let totalDollar 
+
+
+console.log("---Dados da Compra---")
+
+console.log("Nome Completo: ", nomeCompleto)
+
+if (tipoDeJogo === "IN"){
+    console.log("Tipo de jogo: Internacional")
+} else if (tipoDeJogo === "DO"){
+    console.log("Tipo de jogo: Doméstico")
+} else {
+    console.log("Tipo de jogo não informado")
+}
+
+if (etapaDoJogo === "SF") {
+    console.log("Etapa do jogo: Semi-final ")
+} else if (etapaDoJogo === "DT") {
+    console.log("Etapa do jogo: Decisão de terceiro lugar")
+} else if (etapaDoJogo === "FI") {
+    console.log("Etapa do jogo: Final")
+} else {
+    console.log("Etapa não informada")
+}
+
+if (categoria === 1) { 
+    console.log("Categoria: 1")
+} else if (categoria === 2) { 
+    console.log("Categoria: 2")
+} else if (categoria === 3) { 
+    console.log("Categoria: 3")
+} else if (categoria === 4) { 
+    console.log("Categoria: 4")
+} else { 
+    console.log("Categoria inexistente")
+}   
+
+console.log ("Quantidade de ingressos: ", quantidaDeIngressos, " ingressos")
+
+console.log("---Valores---")
+
+if (etapaDoJogo === "SF" && categoria === 1 && tipoDeJogo === "DO") {
+    valor = 1320
+    valorTotal = valor*quantidaDeIngressos
+    console.log("Valor do Ingresso: ", "R$ ", valor)
+    console.log("Valor total: ", "R$ ",valorTotal)
+}
+
+if (etapaDoJogo === "SF" && categoria === 1 && tipoDeJogo === "IN") {
+    valorDollar = 1350*4.1
+    totalDollar = valorDollar*quantidaDeIngressos
+    console.log("Valor do Ingresso: ","U$ ", valorDollar)
+    console.log("Valor total: ","U$ ", totalDollar)
+}
+
+if (etapaDoJogo === "SF" && categoria === 2 && tipoDeJogo === "DO") {
+    valor = 880
+    valorTotal = valor*quantidaDeIngressos
+    console.log("Valor do Ingresso: ", "R$ ",valor)
+    console.log("Valor total: ", "R$ ",valorTotal)
+}
+
+if (etapaDoJogo === "SF" && categoria === 2 && tipoDeJogo === "IN") {
+    valorDollar = 880*4.1
+    totalDollar = valorDollar*quantidaDeIngressos
+    console.log("Valor do Ingresso: ", "U$ ",valorDollar)
+    console.log("Valor total: ", "U$ ",totalDollar)
+}
+
+if (etapaDoJogo === "SF" && categoria === 3 && tipoDeJogo === "DO") {
+    valor = 550
+    valorTotal = valor*quantidaDeIngressos
+    console.log("Valor do Ingresso: ", "R$ ",valor)
+    console.log("Valor total: ", "R$ ",valorTotal)
+}
+
+if (etapaDoJogo === "SF" && categoria === 3 && tipoDeJogo === "IN") {
+    valorDollar = 550*4.1
+    totalDollar = valorDollar*quantidaDeIngressos
+    console.log("Valor do Ingresso: ", "U$ ",valorDollar)
+    console.log("Valor total: ", "U$ ",totalDollar)
+}
+
+if (etapaDoJogo === "SF" && categoria === 4 && tipoDeJogo === "DO") {
+    valor = 220
+    valorTotal = valor*quantidaDeIngressos
+    console.log("Valor do Ingresso: ", "R$ ",valor)
+    console.log("Valor total: ", "R$ ",valorTotal)
+}
+
+if (etapaDoJogo === "SF" && categoria === 4 && tipoDeJogo === "IN") {
+    valorDollar = 220*4.1
+    totalDollar = valorDollar*quantidaDeIngressos
+    console.log("Valor do Ingresso: ","U$ ", valorDollar)
+    console.log("Valor total: ", "U$ ",totalDollar)
+}
+
+if (etapaDoJogo === "DT" && categoria === 1 && tipoDeJogo === "DO") {
+    valor = 660
+    valorTotal = valor*quantidaDeIngressos
+    console.log("Valor do Ingresso: ", "R$ ",valor)
+    console.log("Valor total: ", "R$ ",valorTotal)
+}
+
+if (etapaDoJogo === "DT" && categoria === 1 && tipoDeJogo === "IN") {
+    valorDollar = 660*4.1
+    totalDollar = valorDollar*quantidaDeIngressos
+    console.log("Valor do Ingresso: ", "U$ ",valorDollar)
+    console.log("Valor total: ", "U$ ",totalDollar)
+}
+
+if (etapaDoJogo === "DT" && categoria === 2 && tipoDeJogo === "DO") {
+    valor = 440
+    valorTotal = valor*quantidaDeIngressos
+    console.log("Valor do Ingresso: ", "R$ ",valor)
+    console.log("Valor total: ", "R$ ",valorTotal)
+}
+
+if (etapaDoJogo === "DT" && categoria === 2 && tipoDeJogo === "IN") {
+    valorDollar = 440*4.1
+    totalDollar = valorDollar*quantidaDeIngressos
+    console.log("Valor do Ingresso: ", "U$ ",valorDollar)
+    console.log("Valor total: ", "U$ ",totalDollar)
+}
+
+if (etapaDoJogo === "DT" && categoria === 3 && tipoDeJogo === "DO") {
+    valor = 330
+    valorTotal = valor*quantidaDeIngressos
+    console.log("Valor do Ingresso: ", "R$ ",valor)
+    console.log("Valor total: ", "R$ ",valorTotal)
+}
+
+if (etapaDoJogo === "DT" && categoria === 3 && tipoDeJogo === "IN") {
+    valorDollar = 330*4.1
+    totalDollar = valorDollar*quantidaDeIngressos
+    console.log("Valor do Ingresso: ", "U$ ",valorDollar)
+    console.log("Valor total: ", "U$ ",totalDollar)
+}
+
+if (etapaDoJogo === "DT" && categoria === 4 && tipoDeJogo === "DO") {
+    valor = 170
+    valorTotal = valor*quantidaDeIngressos
+    console.log("Valor do Ingresso: ","R$ ",valor)
+    console.log("Valor total: ", "R$ ",valorTotal)
+}
+
+if (etapaDoJogo === "DT" && categoria === 4 && tipoDeJogo === "IN") {
+    valorDollar = 170*4.1
+    totalDollar = valorDollar*quantidaDeIngressos
+    console.log("Valor do Ingresso: ", "U$ ",valorDollar)
+    console.log("Valor total: ", "U$ ",totalDollar)
+}
+
+if (etapaDoJogo === "FI" && categoria === 1 && tipoDeJogo === "DO") {
+    valor = 1980
+    valorTotal = valor*quantidaDeIngressos
+    console.log("Valor do Ingresso: ","R$ ", valor)
+    console.log("Valor total: ", "R$ ",valorTotal)
+}
+
+if (etapaDoJogo === "FI" && categoria === 1 && tipoDeJogo === "IN") {
+    valorDollar = 1980*4.1
+    totalDollar = valorDollar*quantidaDeIngressos
+    console.log("Valor do Ingresso: ", "U$ ",valorDollar)
+    console.log("Valor total: ", "U$ ","U$ ",totalDollar)
+}
+
+if (etapaDoJogo === "FI" && categoria === 2 && tipoDeJogo === "DO") {
+    valor = 1320
+    valorTotal = valor*quantidaDeIngressos
+    console.log("Valor do Ingresso: ", "R$ ",valor)
+    console.log("Valor total: ","R$ ", valorTotal)
+}
+
+if (etapaDoJogo === "FI" && categoria === 2 && tipoDeJogo === "IN") {
+    valorDollar = 1320*4.1
+    totalDollar = valorDollar*quantidaDeIngressos
+    console.log("Valor do Ingresso: ","U$ ", valorDollar)
+    console.log("Valor total: ", "U$ ",totalDollar)
+}
+
+if (etapaDoJogo === "FI" && categoria === 3 && tipoDeJogo === "DO") {
+    valor = 880
+    valorTotal = valor*quantidaDeIngressos
+    console.log("Valor do Ingresso: ","R$ ", valor)
+    console.log("Valor total: ",  "R$ ",valorTotal)
+}
+
+if (etapaDoJogo === "FI" && categoria === 3 && tipoDeJogo === "IN") {
+    valorDollar = 880*4.1
+    totalDollar = valorDollar*quantidaDeIngressos
+    console.log("Valor do Ingresso: ","U$ ", valorDollar)
+    console.log("Valor total: ",  "U$ ",totalDollar)
+}
+
+if (etapaDoJogo === "FI" && categoria === 4 && tipoDeJogo === "DO") {
+    valor = 330
+    valorTotal = valor*quantidaDeIngressos
+    console.log("Valor do Ingresso: ", "R$ ",valor)
+    console.log("Valor total: ",  "R$ ",valorTotal)
+}
+
+if (etapaDoJogo === "FI" && categoria === 4 && tipoDeJogo === "IN") {
+    valorDollar = 330*4.1
+    totalDollar = valorDollar*quantidaDeIngressos
+    console.log("Valor do Ingresso: ","U$ ", valorDollar)
+    console.log("Valor total: ", "U$ ", totalDollar)
 }
 
