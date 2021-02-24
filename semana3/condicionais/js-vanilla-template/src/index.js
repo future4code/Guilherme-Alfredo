@@ -56,12 +56,14 @@ switch (turno2) {
         console.log("Isso não é uma opção de turno")
 }
 
-//Exercício 7 
+//Exercício 7 + Desafio 1
 
 const filme = prompt ("Qual genero de filme gostaria de assistir? Fantasia, Terror ou Comédia?")
 const preço = Number (prompt ("Qual o valor do ingresso? R$"))
 if (filme === "Fantasia" && preço < 15) {
-    console.log("Bom Filme!")
+    const snack = prompt("Qual snack você quer comprar?")
+    console.log("Bom Filme! ", "com", snack)
 } else{
     console.log("Escolha outro filme :(")
 }
+
