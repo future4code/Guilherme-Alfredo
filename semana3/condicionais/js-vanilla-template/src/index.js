@@ -27,7 +27,7 @@ if(idade >= 18){
     console.log("Você não pode dirigir")
 }
 
-//Exercício 5 
+// //Exercício 5 
 const turno = prompt ("Informe o turno que você estuda: M (matutino), V (Vespertino) ou N (Noturno)")
 if(turno === "M"){
     console.log("Bom Dia!")
@@ -37,4 +37,21 @@ if(turno === "M"){
     console.log("Boa noite!")
 } else{
     console.log("Isso não é uma opção de turno")
+}
+
+//Exercício 6
+
+const turno2 = prompt ("Informe o turno que você estuda: M (matutino), V (Vespertino) ou N (Noturno)")
+switch (turno2) {
+    case "M":
+        console.log("Bom Dia!")
+        break
+    case "V":
+        console.log("Boa tarde!")
+        break
+    case "N":
+        console.log("Boa noite!")
+        break
+    default:
+        console.log("Isso não é uma opção de turno")
 }
