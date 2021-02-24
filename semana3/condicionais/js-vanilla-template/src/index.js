@@ -27,7 +27,7 @@ if(idade >= 18){
     console.log("Você não pode dirigir")
 }
 
-// //Exercício 5 
+//Exercício 5 
 const turno = prompt ("Informe o turno que você estuda: M (matutino), V (Vespertino) ou N (Noturno)")
 if(turno === "M"){
     console.log("Bom Dia!")
@@ -54,4 +54,14 @@ switch (turno2) {
         break
     default:
         console.log("Isso não é uma opção de turno")
+}
+
+//Exercício 7 
+
+const filme = prompt ("Qual genero de filme gostaria de assistir? Fantasia, Terror ou Comédia?")
+const preço = Number (prompt ("Qual o valor do ingresso? R$"))
+if (filme === "Fantasia" && preço < 15) {
+    console.log("Bom Filme!")
+} else{
+    console.log("Escolha outro filme :(")
 }
