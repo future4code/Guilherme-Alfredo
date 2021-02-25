@@ -15,7 +15,17 @@
 //Exercício 1 
 const arrayOriginal = [16, 13, 26, 60, 86, 130, 21, 77, 61, 146, 22]
 let numero = 0
+console.log("Números do array")
 for (let numero of arrayOriginal) {
+    console.log(numero)
+}
+
+//Exercício 2 
+console.log("Números divididos por 10")
+
+let divisao = 10
+for (let numero of arrayOriginal) {
+    numero = numero/divisao
     console.log(numero)
 }
 
