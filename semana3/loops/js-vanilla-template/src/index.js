@@ -7,7 +7,7 @@
 
 //Exercício 2
 //a) O código vai percorrer todos os elementos do array e vai imprimir na tela todos os números encontrados que são maiores de 18 (19, 21, 23, 25, 27, 30)
-//b) Utilizar o for of seria suficiente sim, poderia ser realizado ao criar uma variável em um escopo pai e incrementando ela dentro do filho. 
+//b) Com o for...of.. não conseguimos acessar o índice dos elementos.  
 
 
 //Exercícios de escrita de código
@@ -58,7 +58,7 @@ for (let i = 0; i < arrayOriginal.length; i++) {
 // Letra e
 
 let maior = 0
-let menor = 17
+let menor = arrayOriginal[0]
 
 for (let i = 0; i < arrayOriginal.length; i++) {
     if (arrayOriginal[i] > maior) {
@@ -75,3 +75,30 @@ for (let i = 0; i < arrayOriginal.length; i++) {
 }
 
 console.log("O maior numero é ", maior, " e o menor é", menor)
+
+
+//DESAFIOS 
+
+// 1) 
+
+let digiteUmNumero = Number(prompt("Digite um número aleatório"))
+console.log("Vamos jogar!")
+
+let tentativas = []
+let chute
+
+while (digiteUmNumero !== chute) {
+    chute = Number(prompt("Qual foi o número escolhido?"))
+    console.log("O número chutado foi: ", chute)
+    if (digiteUmNumero > chute) {
+        console.log("Errou. O número escolhido é maior");
+    }
+    else if (digiteUmNumero < chute) {
+        console.log("Errou. O número escolhido é menor");
+    }
+    tentativas.push(chute)
+}
+if ((digiteUmNumero = chute)) {
+    console.log("Acertou!");
+    console.log("O número de tentativas foi: ", tentativas.length);
+}
