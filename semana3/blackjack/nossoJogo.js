@@ -26,8 +26,8 @@ if (inicio){
 
    console.log("Vamos lá!!")
 
-   console.log("Suas cartas: ", sorteioDeCartas[0].texto, sorteioDeCartas[1].texto, " - pontuação ", usuarioVence)
-   console.log("Cartas do computador: ", sorteioDeCartas[2].texto, sorteioDeCartas[3].texto, " - pontuação ", computadorVence)
+   console.log("Suas cartas: " + sorteioDeCartas[0].texto + " " + sorteioDeCartas[1].texto + " " + " - pontuação ", usuarioVence)
+   console.log("Cartas do computador: " + sorteioDeCartas[2].texto + " " + sorteioDeCartas[3].texto + " " + " - pontuação ", computadorVence)
 
    if (usuarioVence > computadorVence) {
       console.log ("Você venceu!!")
