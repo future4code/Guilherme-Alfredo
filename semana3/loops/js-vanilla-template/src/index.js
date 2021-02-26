@@ -81,24 +81,51 @@ console.log("O maior numero é ", maior, " e o menor é", menor)
 
 // 1) 
 
-let digiteUmNumero = Number(prompt("Digite um número aleatório"))
+// let digiteUmNumero = Number(prompt("Digite um número aleatório"))
+// console.log("Vamos jogar!")
+
+// let tentativas = []
+// let chute
+
+// while (digiteUmNumero !== chute) {
+//     chute = Number(prompt("Qual foi o número escolhido?"))
+//     console.log("O número chutado foi: ", chute)
+//     if (digiteUmNumero > chute) {
+//         console.log("Errou. O número escolhido é maior");
+//     }
+//     else if (digiteUmNumero < chute) {
+//         console.log("Errou. O número escolhido é menor");
+//     }
+//     tentativas.push(chute)
+// }
+// if ((digiteUmNumero = chute)) {
+//     console.log("Acertou!");
+//     console.log("O número de tentativas foi: ", tentativas.length);
+// }
+
+// 2)
+
+let numeroAleatorio = Math.ceil(Math.random()*100);
 console.log("Vamos jogar!")
 
 let tentativas = []
 let chute
 
-while (digiteUmNumero !== chute) {
+while (numeroAleatorio !== chute) {
     chute = Number(prompt("Qual foi o número escolhido?"))
     console.log("O número chutado foi: ", chute)
-    if (digiteUmNumero > chute) {
+    if (numeroAleatorio > chute) {
         console.log("Errou. O número escolhido é maior");
     }
-    else if (digiteUmNumero < chute) {
+    else if (numeroAleatorio < chute) {
         console.log("Errou. O número escolhido é menor");
     }
     tentativas.push(chute)
 }
-if ((digiteUmNumero = chute)) {
+if ((numeroAleatorio = chute)) {
     console.log("Acertou!");
     console.log("O número de tentativas foi: ", tentativas.length);
 }
+
+// Foi bem tranquilo fazer a alteração, o que foi trabalhoso mesmo foram as pesquisas que eu tive que fazer para encontrar a "fórmula" e entende-la.
+// Depois de encontrada a fórmula, foi só usar a lógica para deduzir onde ela deveria ser colocada para que o programa funcionasse. 
