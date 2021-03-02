@@ -1,14 +1,14 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; 
 }
 
 header {
     height: 10vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;  
 }
 
 section {
@@ -22,3 +22,4 @@ section {
     width: 14%;
     padding: 5px;
 }
+
