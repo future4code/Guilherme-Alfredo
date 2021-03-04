@@ -25,6 +25,18 @@ function imprimirExtrato(){
 
 
     // AQUI VEM A IMPLEMENTAÇÃO
+
+    arrDespesas.forEach((extrato) => {
+        if(extrato.tipo === "alimentação"){
+            gastoAlimentacao += extrato.valor
+        } else if (extrato.tipo === "utilidades"){
+            gastoUtilidades += extrato.valor 
+        } else if (extrato.tipo === "viagem") {
+            gastoViagem += extrato.valor
+        }
+
+        gastoTotal += extrato.valor
+    })
     
     divExtrato.innerHTML = `<p>Extrato: Gasto Total: R$${gastoTotal} | Alimentação: R$${gastoAlimentacao} | 
                                         Utilidades: R$${gastoUtilidades} | Viagem: R$${gastoViagem}</p>`
