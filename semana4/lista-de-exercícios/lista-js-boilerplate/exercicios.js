@@ -280,14 +280,34 @@ function retornaPessoasNaoAutorizadas() {
 //Exercício 19
 
 const consultas = [
-  { nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
-  { nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
-  { nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2019" },
-  { nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
-  ]
+   { nome: "João", genero: "masculino", cancelada: false, dataDaConsulta: "01/10/2019" },
+   { nome: "Pedro", genero: "masculino", cancelada: true, dataDaConsulta: "02/10/2019" },
+   { nome: "Paula", genero: "feminino", cancelada: false, dataDaConsulta: "03/11/2019" },
+   { nome: "Márcia", genero: "feminino", cancelada: true, dataDaConsulta: "04/11/2019" }
+]
 
-function retornaEmailConsulta(consultas) {
-  // implemente sua lógica aqui
+function retornaEmailConsulta() {
+   let textoEmail  = []
+   let pronome
+   let titulo
+   for (pessoa of consultas) {
+      if (pessoa.genero === "feminino"){
+         titulo = "Sra."
+         pronome = "la"
+      } else if (pessoa.genero === "masculino") {
+         titulo = "Sr."
+         pronome = "lo"
+      }
+   
+   if (pessoa.cancelada === true) {
+      textoEmail.push(`Olá, ${titulo} ${pessoa.nome}. Infelizmente sua consulta marcada para o dia ${pessoa.dataDaConsulta} foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la.`)
+   
+   } else {
+      textoEmail.push(`Olá, ${titulo} ${pessoa.nome}. Estamos enviando esta mensagem para lembrá-${pronome} da sua consulta no dia ${pessoa.dataDaConsulta}. Por favor, acuse o recebimento deste-email.`) 
+   }
+}
+   return textoEmail
+
 }
 
 //Exercício 20
@@ -302,5 +322,5 @@ const contas = [
 ]
 
 function atualizaSaldo() {
-  // implemente sua lógica aqui
+  
 }
