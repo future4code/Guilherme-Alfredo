@@ -322,5 +322,12 @@ const contas = [
 ]
 
 function atualizaSaldo() {
-  
+   contas.forEach((cliente) => {
+   let despesa = 0
+   for (valor of cliente.compras){
+   despesa += valor
+   }
+   cliente.saldoTotal -= despesa
+   })
+   return contas
 }
