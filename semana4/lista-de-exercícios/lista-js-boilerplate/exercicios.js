@@ -119,22 +119,26 @@ if (num1 < num2){
 
 function segundoMaiorEMenor(array) {
    array = ordenaArray(array)
-   let novoArray = []
-   novoArray.push(array [array.length -2])
-   novoArray.push(array[1])
+   let novoArray = [array [array.length - 2], array [1]]
    return novoArray
 }
 
 //Exercício 11
 
 function ordenaArray(array) {
-   return array.sort((a,b) => a - b); 
+   return array.sort((num1, num2) => num1 - num2); 
 }
 
 // Exercício 12
 
 function filmeFavorito() {
-   // implemente sua lógica aqui
+   let filme = {
+      nome: "O Diabo Veste Prada", 
+      ano: 2006, 
+      diretor: "David Frankel", 
+      atores: ["Meryl Streep", "Anne Hathaway", "Emily Blunt", "Stanley Tucci"]
+   }
+   return filme
 }
 
 // Exercício 13
