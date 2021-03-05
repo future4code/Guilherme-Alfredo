@@ -254,15 +254,27 @@ const pessoas = [
 
 //Exercício 18, letra A
 
-function retornaPessoasAutorizadas(pessoas) {
-   // implemente sua lógica aqui
+function retornaPessoasAutorizadas() {
+   let arrayAutorizadas = []
+   for (pessoa of pessoas){
+   if (pessoa.altura > 1.5 && pessoa.idade > 14 && pessoa.idade < 60){
+      arrayAutorizadas.push(pessoa)
+   }
+   }
+   return arrayAutorizadas
 }
 
 
 // Exercício 18, letra B
 
-function retornaPessoasNaoAutorizadas(pessoas) {
-   // implemente sua lógica aqui
+function retornaPessoasNaoAutorizadas() {
+   let arrayBarradas = []
+   for (pessoa of pessoas){
+   if (pessoa.altura < 1.5 || pessoa.idade < 14 || pessoa.idade > 60){
+      arrayBarradas.push(pessoa)
+   }
+   }
+   return arrayBarradas
 }
 
 //Exercício 19
