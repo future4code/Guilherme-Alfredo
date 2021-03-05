@@ -10,29 +10,43 @@ function inverteArray(array) {
 }
 
 //Exercício 2
-function retornaNumerosParesElevadosADois (array) {
-let novoArray = array.filter ((item) =>{
-      return item %2 === 0
-   });
 
-   novoArray = novoArray.map ((item) =>{
+function retornaNumerosParesElevadosADois (array) {
+let arrayPar = array.filter ((item) =>{
+      return item %2 === 0
+   })
+
+   arrayElevadoADois = arrayPar.map ((item) =>{
       return item*item
    })
 
-   return novoArray
+   return arrayElevadoADois 
 }
 
 //Exercício 3
 
 function retornaNumerosPares (array) {
-   
+   let arrayPar = array.filter ((item) =>{
+      return item %2 === 0
+   })
+
+   return arrayPar
 }
+
 
 //Exercício 4
 
 function retornaMaiorNumero(array) {
-   // implemente sua lógica aqui
+   let maior = 0
+   for (item of array) {
+      if (item > maior){
+         
+         maior = item
+      }
+   } 
+   return maior
 }
+
 
 //Exercício 5
 
