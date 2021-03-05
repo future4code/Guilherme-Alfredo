@@ -1,6 +1,5 @@
 //Exercício 1
 
-let array =  [0, 8, 23, 16, 10, 15, 41, 12, 13]
 function inverteArray(array) {
    let arrayInverso = []
    for (let i = array.length - 1; i >=0; i--) {
@@ -11,15 +10,22 @@ function inverteArray(array) {
 }
 
 //Exercício 2
-array = [1, 2, 3, 4, 5, 6]
 function retornaNumerosParesElevadosADois (array) {
-   // implemente sua lógica aqui
+let novoArray = array.filter ((item) =>{
+      return item %2 === 0
+   });
+
+   novoArray = novoArray.map ((item) =>{
+      return item*item
+   })
+
+   return novoArray
 }
 
 //Exercício 3
 
 function retornaNumerosPares (array) {
-   // implemente sua lógica aqui
+   
 }
 
 //Exercício 4
