@@ -118,13 +118,17 @@ if (num1 < num2){
 // Exercício 10
 
 function segundoMaiorEMenor(array) {
-   // implemente sua lógica aqui
+   array = ordenaArray(array)
+   let novoArray = []
+   novoArray.push(array [array.length -2])
+   novoArray.push(array[1])
+   return novoArray
 }
 
 //Exercício 11
 
 function ordenaArray(array) {
-   // implemente sua lógica aqui
+   return array.sort((a,b) => a - b); 
 }
 
 // Exercício 12
