@@ -184,13 +184,27 @@ const arrayDePessoas = [
 // Exercício 16, letra A
 
 function maioresDe18(arrayDePessoas) {
-   // implemente sua lógica aqui
+let arrayAdulto = []
+for (pessoa of arrayDePessoas){
+   if (pessoa.idade >= 20){
+      arrayAdulto.push(pessoa)
+      
+   }   
+}
+   return arrayAdulto   
 }
 
 // Exercício 16, letra B
 
 function menoresDe18(arrayDePessoas) {
-   // implemente sua lógica aqui
+   let arrayMenores = []
+   for (pessoa of arrayDePessoas){
+      if (pessoa.idade < 20){
+         arrayMenores.push(pessoa)
+         
+      }   
+   }
+      return arrayMenores  
 }
 
 // Exercício 17, letra A
