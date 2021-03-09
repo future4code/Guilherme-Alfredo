@@ -29,7 +29,7 @@ function App() {
         <CardPequeno
           imagem="https://png.pngtree.com/png-vector/20190826/ourlarge/pngtree-house-location-icon-png-image_1701248.jpg"
           nome="Endereço:"
-          descricao="Rua Zuzu Angel, 251"        
+          descricao="Rua Zuzu Angel, 251, BH"        
         />
 
       </div>
