@@ -1,7 +1,14 @@
 import React from 'react';
 import './App.css';
 import Post from './components/Post/Post';
+import syled from "styled-components"
+import styled from 'styled-components';
 
+const Inputs = styled.input`
+  display: flex;
+  width: 300px;
+  margin-bottom: 10px;
+`
 
 class App extends React.Component {
 
@@ -77,17 +84,17 @@ class App extends React.Component {
 
       return (
         <div className={'app-container'}>
-        <input
+        <Inputs
         value={this.state.valorInputNome}
         onChange={this.onChangeInputNome}
         placeholder={"Nome"}
         />
-        <input
+        <Inputs
         value={this.state.valorInputFoto}
         onChange={this.onChangeInputFoto}
         placeholder={"Foto"}
         />
-        <input
+        <Inputs
         value={this.state.valorInputPost}
         onChange={this.onChangeInputPost}
         placeholder={"Post"}
