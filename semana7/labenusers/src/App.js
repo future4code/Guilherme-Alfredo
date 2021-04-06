@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import axios from 'axios';
 import Formulario from './Components/Formulario'
 import ListaUsuarios from './Components/ListaUsuarios'
+import Detalhes from './Components/Detalhes'
 
 
 
@@ -22,12 +23,12 @@ export default class App extends React.Component {
     })
     if (this.state.mudarTela) {
       this.setState({
-        pagina: <Formulario />
+        pagina: <Formulario/>
       })
     }
     else {
       this.setState({
-        pagina: <ListaUsuarios />
+        pagina: <ListaUsuarios/>
       })
     }
   }
