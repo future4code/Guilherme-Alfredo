@@ -2,48 +2,76 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 import App from '../App'
-import { Header } from '../components/Header'
+import { Header, DivHeader, DivPages, DivContainer } from '../components/Estilization'
 
 
-const DivContainer = styled.div`
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-`
-const DivPages = styled.div`
-    height: 650px;
-    width:400px;
-    border: 1px solid black;
-    
-`
 const DivProfiles = styled.div`
 display: flex;
 flex-direction:column;
 height: 100%;
 width: 100%;
+background-image: linear-gradient(to top, rgba(0,0,0,0.1), transparent);
+border-radius: 5px;
 `
 
 const ProfileImg = styled.img`
     width: 90%;
-    height: 60%;
+    height: 350px;
     margin: 0 auto;
     margin-top: 10px;
+    box-shadow: 0 0 1em gray;
+    border-radius: 5px;
 `
 
 const ProfileDescription = styled.div`
     display: flex;
     flex-direction:column;
     padding: 10px;
+    height:150px;
 `
 
 const DivButtons = styled.div`
     display: flex;
     justify-content:space-evenly;
-
+    height:100px;
+    align-items:center;
     
-
+`
+const LikeButton = styled.button`
+    color: green;
+    width: 50px;
+    height: 50px; 
+    font-size: 30px;
+    border: 1px solid green;
+    cursor: pointer;
+    background-color: white;
+    padding: 5px;
+    border-radius:50%;
+    outline: 0;
+    :hover{
+    transform: scale(1.2);
+    transition: all 0.5s;
+    background-color: green;
+    color: white;
+    }
+`
+const UnlikeButton = styled.button`
+    color: red;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    border: 1px solid red;
+    cursor: pointer;
+    background-color: white;
+    padding: 5px;
+    border-radius:50%;
+    outline: 0;
+    :hover{
+    transform: scale(1.2);
+    transition: all 0.5s;
+    background-color: red;
+    color: white;
+    }
 `
 
 
@@ -88,8 +116,10 @@ export default function HomePage(props) {
         <DivContainer>
             <DivPages>
                 <Header>
-                    <h1>Home</h1>
-                    <button onClick={() => props.goToMatches()}>Ver Matches</button>
+                    <DivHeader>
+                        <h2>Astromatch</h2>
+                        <button onClick={() => props.goToMatches()}>Ver Matches</button>
+                    </DivHeader>
                 </Header>
                 <DivProfiles>
                     <ProfileImg src={randonProfiles.photo} alt={randonProfiles.name} />
@@ -97,14 +127,12 @@ export default function HomePage(props) {
                         <h3>{randonProfiles.name}, {randonProfiles.age}</h3>
                         <p>{randonProfiles.bio}</p>
                     </ProfileDescription>
-
-                    <DivButtons>
-                        <button onClick={() => onClickChoice(randonProfiles.id, false)}>X</button>
-                        <button onClick={() => onClickChoice(randonProfiles.id, true)}>S2</button>
-                    </DivButtons>
                 </DivProfiles>
 
-
+                <DivButtons>
+                    <UnlikeButton onClick={() => onClickChoice(randonProfiles.id, false)}>X</UnlikeButton>
+                    <LikeButton onClick={() => onClickChoice(randonProfiles.id, true)}>♥️</LikeButton>
+                </DivButtons>
             </DivPages>
         </DivContainer>
     );

@@ -1,22 +1,11 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
-import { Header } from '../components/Header'
+import { Header, DivHeader, DivPages, DivContainer } from '../components/Estilization'
 
 
-const DivContainer = styled.div`
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-`
-const DivPages = styled.div`
-    height: 650px;
-    width:400px;
-    border: 1px solid black;
-    
-`
+
+
 const DivMatchList = styled.div`
     display:flex;
     align-items: center;
@@ -47,9 +36,8 @@ const ClearButton = styled.button`
 const DivMatches = styled.div`
     display: flex;
     flex-direction:column;
-
-
 `
+
 export default function MatchPage(props) {
 
     const [matches, setMatches] = useState([])
@@ -89,8 +77,10 @@ export default function MatchPage(props) {
         <DivContainer>
             <DivPages>
                 <Header>
-                    <h1>Matches</h1>
-                    <button onClick={() => props.goToHome()}>Ver Perfis</button>
+                    <DivHeader>
+                        <h2>Matches</h2>
+                        <button onClick={() => props.goToHome()}>Ver Perfis</button>
+                    </DivHeader>
                 </Header>
                 <DivMatches>
                     {matchList}
