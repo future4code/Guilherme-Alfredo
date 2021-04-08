@@ -3,6 +3,7 @@ import axios from 'axios'
 import styled from 'styled-components'
 import App from '../App'
 import { Header, DivHeader, DivPages, DivContainer } from '../components/Estilization'
+import group from '../components/Imagens/group.png'
 
 
 const DivProfiles = styled.div`
@@ -22,7 +23,17 @@ const ProfileImg = styled.img`
     box-shadow: 0 0 1em gray;
     border-radius: 5px;
 `
+const ButtonImg = styled.img`
+cursor: pointer;
+height: 40px;
+width: 40px;
+margin-right: 10px;
+:hover{
+    transform: scale(1.2);
+    transition: all 0.5s;
+    }
 
+`
 const ProfileDescription = styled.div`
     display: flex;
     flex-direction:column;
@@ -35,6 +46,7 @@ const DivButtons = styled.div`
     justify-content:space-evenly;
     height:100px;
     align-items:center;
+    background-color: #595757;
     
 `
 const LikeButton = styled.button`
@@ -118,7 +130,7 @@ export default function HomePage(props) {
                 <Header>
                     <DivHeader>
                         <h2>Astromatch</h2>
-                        <button onClick={() => props.goToMatches()}>Ver Matches</button>
+                        <ButtonImg src={group}onClick={() => props.goToMatches()}/>
                     </DivHeader>
                 </Header>
                 <DivProfiles>

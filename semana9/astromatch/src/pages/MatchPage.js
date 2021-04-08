@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 import { Header, DivHeader, DivPages, DivContainer } from '../components/Estilization'
+import home from '../components/Imagens/home.png'
 
 
 
@@ -15,6 +16,17 @@ const DivMatchList = styled.div`
     background-color: grey;
     }
     
+
+`
+const ButtonImg = styled.img`
+cursor: pointer;
+height: 40px;
+width: 40px;
+margin-right: 10px;
+:hover{
+    transform: scale(1.2);
+    transition: all 0.5s;
+    }
 
 `
 const MatchImg = styled.img`
@@ -31,11 +43,14 @@ const ClearButton = styled.button`
     width: 50%;
     align-self: center;
     margin-top: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
 
 `
 const DivMatches = styled.div`
     display: flex;
     flex-direction:column;
+    overflow: auto;
 `
 
 export default function MatchPage(props) {
@@ -79,7 +94,7 @@ export default function MatchPage(props) {
                 <Header>
                     <DivHeader>
                         <h2>Matches</h2>
-                        <button onClick={() => props.goToHome()}>Ver Perfis</button>
+                        <ButtonImg src={home} onClick={() => props.goToHome()}/>
                     </DivHeader>
                 </Header>
                 <DivMatches>

@@ -22,12 +22,11 @@ export const DivPages = styled.div`
 export const Header = styled.div`
     display: flex;
     height: 50px;
-    background: red;
+    background: #F15E5E;
     width: 100%;
     align-items:center;
     justify-content: space-between;
     border-radius: 5px;
-    
 `
 export const DivHeader = styled.div`
     display:flex;
