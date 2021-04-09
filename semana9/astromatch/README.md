@@ -8,7 +8,7 @@ Axios - Biblioteca para fazer requisições do navegador
 
 ## Escopo do projeto 📌
 
-Criar uma plataforma no formato do tinder, tentando usar ao máximo os conhecimentos adquiridos durante essa semana, a saber: Hooks (useState e/ou useEffect). 
+Criar um clone do tinder, utilizando ao máximo os conhecimentos adquiridos durante essa semana, a saber: Hooks (useState e/ou useEffect). 
 
 ## Requisitos e funcionalidades
 
