@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { useHistory } from "react-router-dom";
 import { goToAdminHomePage} from "../routes/coordinators";
 import usePrivatePage from "../hooks/usePrivatePage"
+import {DivContainer, DivButtons, Buttons} from '../components/Estilization'
 
 export default function TripDetailsPage() {
 usePrivatePage()
@@ -33,11 +34,13 @@ const getTripDetail = (id) => {
 }
 
     return (
-        <div>
-            <p>Trip Details Page</p>
-            <button onClick={() => goToAdminHomePage(history)}>Voltar</button>
-            <button onClick={logout}>Logout</button>
-        </div>
+        <DivContainer>
+            <DivButtons>
+            <Buttons onClick={() => goToAdminHomePage(history)}>Voltar</Buttons>
+            <Buttons onClick={logout}>Logout</Buttons>
+            </DivButtons>
+            <h1>Trip Details Page</h1>
+        </DivContainer>
     );
 }
 

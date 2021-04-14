@@ -3,6 +3,7 @@ import axios from 'axios'
 import styled from 'styled-components'
 import { useHistory } from "react-router-dom";
 import { goToHomePage, goToApplicationFormPage } from "../routes/coordinators";
+import {DivContainer, DivButtons, Buttons} from '../components/Estilization'
 
 
 
@@ -12,13 +13,14 @@ const history = useHistory();
 
 
     return (
-        <div>
-            <p>List Trips Page</p>
-
-            <button onClick={() => goToHomePage(history)}>Voltar</button>
-
-            <button onClick={() => goToApplicationFormPage(history)}>Cadastre-se para uma viagem</button>
-        </div>
+        <DivContainer>
+            <DivButtons>
+            <Buttons onClick={() => goToHomePage(history)}>Voltar</Buttons>
+            <Buttons onClick={() => goToApplicationFormPage(history)}>Quero viajar</Buttons>
+            </DivButtons>
+            <h1>List Trips Page</h1>
+            
+        </DivContainer>
     );
 }
 

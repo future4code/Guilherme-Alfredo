@@ -2,37 +2,10 @@ import {useEffect, useState} from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 import { useHistory } from "react-router-dom";
-import { goToHomePage} from "../routes/coordinators";
+import { goToHomePage, goToCreateTripPage} from "../routes/coordinators";
 import usePrivatePage from "../hooks/usePrivatePage"
-import space from '../images/space.jpg'
+import {DivContainer, DivButtons, Buttons} from '../components/Estilization'
 
-
-const DivContainer = styled.div`
-    display:flex;
-    height: 100vh;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    background-image: url(${space});
-    background-size: 100%;
-    color: white;    
-`
-const DivButtons = styled.div`
-    margin-top: 40px;
-`
-const Buttons = styled.button`
-    padding: 20px;
-    border-radius: 24px;
-    background-color: #6B256F;
-    color: white;
-    border: none;
-    width: 200px;
-    margin-right: 12px;
-    outline: 0;
-    :hover{
-    cursor: pointer; 
-}
-`
 const DivListItem = styled.div`
 height: 50px;
 width: 400px;
@@ -91,12 +64,12 @@ const tripsList = trips.map((trip) =>{
 
     return (
         <DivContainer>
-            <p>Admin Home Page</p>
             <DivButtons>
             <Buttons onClick={() => goToHomePage(history)}>Voltar</Buttons>
-            <Buttons>Criar Viagem</Buttons>
             <Buttons onClick={logout}>Logout</Buttons>
             </DivButtons>
+            <h1>Admin Home Page</h1>
+            <Buttons onClick={() => goToCreateTripPage(history)}>Criar Viagem</Buttons>
             <DivList>
             {tripsList}
             </DivList>
