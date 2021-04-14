@@ -3,7 +3,7 @@ import axios from 'axios'
 
 import styled from 'styled-components'
 import { useHistory } from "react-router-dom";
-import { goToListTripsPage, goToLoginPage } from "../routes/coordinators";
+import { goToAdminHomePage, goToListTripsPage, goToLoginPage } from "../routes/coordinators";
 import space from '../images/space.jpg'
 
 
@@ -41,7 +41,14 @@ export default function HomePage() {
     const history = useHistory();
 
 
-
+const validation = () => {
+    const token = window.localStorage.getItem("token");
+    if (token === null){
+        goToLoginPage(history)
+    } else {
+        goToAdminHomePage(history)
+    }
+}
 
     return (
         <DivContainer>
@@ -50,7 +57,7 @@ export default function HomePage() {
             <DivButtons>
                 <Buttons onClick={() => goToListTripsPage(history)}><b>Viagens</b></Buttons>
 
-                <Buttons onClick={() => goToLoginPage(history)}><b>Area de Administrador</b></Buttons>
+                <Buttons onClick={validation}><b>Area de Administrador</b></Buttons>
             </DivButtons>
 
         </DivContainer>
