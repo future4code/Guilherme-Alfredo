@@ -8,15 +8,14 @@ import {useEffect, useState} from 'react'
 
 
 const DivListItem = styled.div`
-height: 50px;
+height: 300px;
 width: 400px;
 display:flex;
+flex-direction:column;
 padding: 5px;
-align-items: center;
-justify-content: space-between;
-margin-top: 10px;
 :hover{
     background-color:grey;
+    color:black;
 }
 `
 const DivList = styled.div`
@@ -45,7 +44,11 @@ const getTrips = () => {
 const tripsList = trips.map((trip) =>{
     return(
     <DivListItem>
-        <p>{trip.name}</p>
+        <p><b>Viagem: </b> {trip.name}</p>
+        <p><b>Descrição: </b>{trip.description}</p>
+        <p><b>Planeta: </b>{trip.planet}</p>
+        <p><b>Duração em dias: </b>{trip.durationInDays}</p>
+        <p><b>Data: </b>{trip.date}</p>
     </DivListItem>
     )
 })

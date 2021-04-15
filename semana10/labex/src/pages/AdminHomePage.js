@@ -23,9 +23,20 @@ overflow:auto;
 margin-top: 20px;
 margin-bottom: 20px;
 `
-const DeleteButton = styled.button`
+const ListButtons = styled.button`
 margin-right: 10px;
-
+margin-left: 5px;
+padding: 10px;
+    border-radius: 24px;
+    background-color: #6B256F;
+    color: white;
+    border: none;
+    width: 80px;
+    margin-right: 12px;
+    outline: 0;
+    :hover{
+    cursor: pointer; 
+    }
 `
 export default function AdminHomePage() {
 usePrivatePage()
@@ -53,14 +64,32 @@ const getTrips = () => {
     })
 }
 
-
+const deleteTrip = (trip) => {
+    const token = window.localStorage.getItem("token");
+    if (window.confirm("Tem certeza que deseja deletar esta viagem?")) {
+        axios
+            .delete(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/guilherme-mota-cruz/trips/${trip.id}`, {
+                headers: {
+                    auth: token,
+                },
+            })
+            .then(() => {
+                getTrips();
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }
+};
 
 const tripsList = trips.map((trip) =>{
     return(
     <DivListItem>
         <p>{trip.name}</p>
-        <DeleteButton>X</DeleteButton>
-        <button onClick={() => goToTripDetailsPage(history, trip.id)}>ver detalhes</button>
+        <div>
+        <ListButtons onClick={() => goToTripDetailsPage(history, trip.id)}>detalhes</ListButtons>
+        <ListButtons onClick={() => deleteTrip(trip)}>remover</ListButtons>
+        </div>
     </DivListItem>
     )
 })
