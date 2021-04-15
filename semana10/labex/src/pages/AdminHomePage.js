@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 import { useHistory } from "react-router-dom";
-import { goToHomePage, goToCreateTripPage} from "../routes/coordinators";
+import { goToHomePage, goToCreateTripPage, goToTripDetailsPage} from "../routes/coordinators";
 import usePrivatePage from "../hooks/usePrivatePage"
 import {DivContainer, DivButtons, Buttons} from '../components/Estilization'
 
@@ -33,6 +33,7 @@ const history = useHistory()
 const [trips, setTrips] = useState([])
 
 
+
 useEffect(() => {
     getTrips()
 }, []);
@@ -53,11 +54,13 @@ const getTrips = () => {
 }
 
 
+
 const tripsList = trips.map((trip) =>{
     return(
     <DivListItem>
         <p>{trip.name}</p>
         <DeleteButton>X</DeleteButton>
+        <button onClick={() => goToTripDetailsPage(history, trip.id)}>ver detalhes</button>
     </DivListItem>
     )
 })

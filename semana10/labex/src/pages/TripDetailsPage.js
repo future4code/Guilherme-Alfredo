@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import styled from 'styled-components'
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { goToAdminHomePage} from "../routes/coordinators";
 import usePrivatePage from "../hooks/usePrivatePage"
 import {DivContainer, DivButtons, Buttons} from '../components/Estilization'
+
+
 
 export default function TripDetailsPage() {
 usePrivatePage()
 const history = useHistory()
 const [tripDetail, setTripDetail] = useState({})
+const pathParams = useParams()
 
+useEffect(() => {
+    getTripDetail(pathParams.id)
+}, []);
 
 const logout = () => {
     window.localStorage.removeItem("token");
@@ -27,11 +32,13 @@ const getTripDetail = (id) => {
     })
     .then((res) =>{
         setTripDetail(res.data.trip)
+        
     })
     .catch((err) =>{
         console.log(err)
     })
 }
+
 
     return (
         <DivContainer>
@@ -40,6 +47,7 @@ const getTripDetail = (id) => {
             <Buttons onClick={logout}>Logout</Buttons>
             </DivButtons>
             <h1>Trip Details Page</h1>
+            <p>{tripDetail.name}</p>
         </DivContainer>
     );
 }
