@@ -18,6 +18,7 @@ margin-top: 10px;
     background-color:grey;
 }
 `
+
 const DivList = styled.div`
 overflow:auto;
 margin-top: 20px;
@@ -100,7 +101,7 @@ const tripsList = trips.map((trip) =>{
             <Buttons onClick={() => goToHomePage(history)}>Voltar</Buttons>
             <Buttons onClick={logout}>Logout</Buttons>
             </DivButtons>
-            <h1>Admin Home Page</h1>
+            <h1>Página de Administrador</h1>
             <Buttons onClick={() => goToCreateTripPage(history)}>Criar Viagem</Buttons>
             <DivList>
             {tripsList}

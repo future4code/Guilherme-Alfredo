@@ -9,6 +9,9 @@ import {DivContainer, DivButtons, Buttons, Inputs} from '../components/Estilizat
 
 const DivButton = styled.div`
 margin-top: 20px;
+display:flex;
+align-items:center;
+justify-content:center;
 `
 const DivForm = styled.form`
     display:flex;
@@ -79,7 +82,7 @@ axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labeX/guilherme-m
             <Buttons onClick={() => goToAdminHomePage(history)}>Voltar</Buttons>
             <Buttons onClick={logout}>Logout</Buttons>
             </DivButtons>
-            <h1>Create Trip Page</h1>
+            <h1>Criar viagem</h1>
 
             <DivForm onSubmit={handleClick}>
                 <Inputs

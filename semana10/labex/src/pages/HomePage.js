@@ -37,9 +37,9 @@ const validation = () => {
             <h1>LabeX</h1>
             <p>Embarque em uma viagem espacial!!</p>
             <div>
-                <Buttons onClick={() => goToListTripsPage(history)}><b>Viagens</b></Buttons>
+                <Buttons onClick={() => goToListTripsPage(history)}>Viagens</Buttons>
 
-                <Buttons onClick={validation}><b>Area de Administrador</b></Buttons>
+                <Buttons onClick={validation}>Area de Administrador</Buttons>
             </div>
 
         </ContainerHomePage>

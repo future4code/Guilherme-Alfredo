@@ -6,7 +6,6 @@ export const DivContainer = styled.div`
     height: 100vh;
     flex-direction:column;
     align-items:center;
-    /* justify-content:center; */
     background-image: url(${galaxy});
     background-size: 100%;
     color: white;

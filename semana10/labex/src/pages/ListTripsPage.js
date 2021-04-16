@@ -15,13 +15,12 @@ flex-direction:column;
 padding: 5px;
 :hover{
     background-color:grey;
-    color:black;
 }
 `
 const DivList = styled.div`
 overflow:auto;
-margin-top: 20px;
-margin-bottom: 20px;
+margin-top: 5px;
+margin-bottom: 5px;
 `
 export default function ListTripsPage() {
 const history = useHistory();
@@ -59,7 +58,7 @@ const tripsList = trips.map((trip) =>{
             <Buttons onClick={() => goToHomePage(history)}>Voltar</Buttons>
             <Buttons onClick={() => goToApplicationFormPage(history)}>Quero viajar</Buttons>
             </DivButtons>
-            <h1>List Trips Page</h1>
+            <h1>Viagens Programadas</h1>
             <DivList>
             {tripsList}
             </DivList>

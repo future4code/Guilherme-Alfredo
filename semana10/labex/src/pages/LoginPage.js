@@ -9,6 +9,9 @@ import { DivContainer, DivButtons, Buttons, Inputs } from '../components/Estiliz
 
 const DivSendButton = styled.div`
     margin-top: 20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 `
 
 const DivForm = styled.form`

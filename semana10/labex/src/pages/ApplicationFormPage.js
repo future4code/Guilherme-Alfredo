@@ -9,6 +9,9 @@ import { useEffect, useState } from 'react'
 
 const DivButton = styled.div`
 margin-top: 20px;
+display:flex;
+align-items:center;
+justify-content:center;
 `
 const DivForm = styled.form`
     display:flex;
@@ -28,6 +31,7 @@ const initialForm = {
     applicationText: "",
     profession: "",
     country: "",
+    tripId:""
 }
 
 export default function ApplicationFormPage() {
@@ -47,23 +51,25 @@ export default function ApplicationFormPage() {
         resetForm();
     };
 
+
     const applyToTrip = () => {
         const body = {
             name: form.name,
-            age: form.age,
+            age: Number (form.age),
             applicationText: form.applicationText,
             profession: form.profession,
             country: form.country,
         }
-        
-        axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/guilherme-mota-cruz/trips/${form.trip}/apply`, body)
+        console.clear()
+        axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/guilherme-mota-cruz/trips/${form.tripId}/apply`, body)
             .then((res) => {
                 alert("Cadastrado para a viagem, aguarde sua aprovação")
+                console.log(res)
             })
             .catch((err) => {
                 console.log(err)
                 alert("Ocorreu um erro, tente novamente mais tarde!")
-                console.log(body)
+                
             })
     }
     const getTrips = () => {
@@ -100,14 +106,14 @@ export default function ApplicationFormPage() {
             <DivButtons>
                 <Buttons onClick={() => goToListTripsPage(history)} >voltar</Buttons>
             </DivButtons>
-            <h1>Application Form Page</h1>
+            <h1>Cadastro para viagem</h1>
 
             <DivForm onSubmit={handleClick}>
                 <Select
                     required
-                    name="trip"
-                    value={form.trip}
-                    onChange={onchange}
+                    name="tripId"
+                    value={form.tripId}
+                    onChange={onChange}
                 >
                     <option>Selecione sua viagem</option>
                     {tripsList}
