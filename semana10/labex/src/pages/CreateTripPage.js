@@ -50,10 +50,12 @@ const logout = () => {
 
 const createTrip = () => {
     const token = window.localStorage.getItem("token");
+    const dateArray = form.date.split("-")
+    const date = `${dateArray[2]}/${dateArray[1]}/${dateArray[0]}`
     const body = {
     "name": form.name,
     "planet": form.planet,
-    "date": form.date,
+    "date": date,
     "description": form.description,
     "durationInDays": form.durationInDays
     }
@@ -86,7 +88,7 @@ axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labeX/guilherme-m
                     name="name"
                     value={form.name}
                     onChange={onChange}
-                    pattern={"(.*[a-z]){5}"}
+                    pattern={"^.{5,}$"}
                     type="text"
                 />
                 <Select
@@ -120,6 +122,7 @@ axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labeX/guilherme-m
                     value={form.description}
                     onChange={onChange}
                     type="text"
+                    pattern={"^.{30,}$"}
                 />
                 <Inputs
                     required
@@ -128,7 +131,7 @@ axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labeX/guilherme-m
                     value={form.durationInDays}
                     onChange={onChange}
                     type="number"
-                    min = {50}
+                    min={50}
                 />
 
                 <DivButton>

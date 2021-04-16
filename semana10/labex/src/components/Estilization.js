@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import space from '../images/space.jpg'
+import galaxy from '../images/galaxy.jpg'
 
 export const DivContainer = styled.div`
     display:flex;
@@ -7,7 +7,7 @@ export const DivContainer = styled.div`
     flex-direction:column;
     align-items:center;
     /* justify-content:center; */
-    background-image: url(${space});
+    background-image: url(${galaxy});
     background-size: 100%;
     color: white;
 

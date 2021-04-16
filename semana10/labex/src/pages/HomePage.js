@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { useHistory } from "react-router-dom";
 import { goToAdminHomePage, goToListTripsPage, goToLoginPage } from "../routes/coordinators";
 import {DivButtons, Buttons} from '../components/Estilization'
-import space from '../images/space.jpg'
+import galaxy from '../images/galaxy.jpg'
 
 const ContainerHomePage = styled.div`
     display:flex;
@@ -12,7 +12,7 @@ const ContainerHomePage = styled.div`
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    background-image: url(${space});
+    background-image: url(${galaxy});
     background-size: 100%;
     color: white;
 `

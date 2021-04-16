@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import { goToListTripsPage } from "../routes/coordinators";
 import { DivContainer, DivButtons, Buttons, Inputs } from '../components/Estilization'
 import { useForm } from '../hooks/useForm'
-import {useEffect, useState} from 'react'
+import { useEffect, useState } from 'react'
 
 const DivButton = styled.div`
 margin-top: 20px;
@@ -47,50 +47,52 @@ export default function ApplicationFormPage() {
         resetForm();
     };
 
-    const applyToTrip = (id) => {
+    const applyToTrip = () => {
         const body = {
-            "name": form.name,
-            "age": form.age,
-            "applicationText": form.applicationText,
-            "profession": form.profession,
-            "country": form.country
+            name: form.name,
+            age: form.age,
+            applicationText: form.applicationText,
+            profession: form.profession,
+            country: form.country,
         }
-        axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/guilherme-mota-cruz/trips/${id}/apply`, body)
-            .then(() => {
+        
+        axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/guilherme-mota-cruz/trips/${form.trip}/apply`, body)
+            .then((res) => {
                 alert("Cadastrado para a viagem, aguarde sua aprovação")
             })
             .catch((err) => {
                 console.log(err)
                 alert("Ocorreu um erro, tente novamente mais tarde!")
+                console.log(body)
             })
     }
     const getTrips = () => {
         axios.get("https://us-central1-labenu-apis.cloudfunctions.net/labeX/guilherme-mota-cruz/trips")
-        .then((res) =>{
-            setTrips(res.data.trips)
-        })
-        .catch((err) =>{
-            console.log(err)
-        })
+            .then((res) => {
+                setTrips(res.data.trips)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
     }
     const getCountries = () => {
         axios.get("https://servicodados.ibge.gov.br/api/v1/localidades/paises?orderBy=nome")
-        .then((res) =>{
-            setCountries(res.data)
-        })
-        .catch((err) =>{
-            console.log(err)
-        })
+            .then((res) => {
+                setCountries(res.data)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
     }
-    const tripsList = trips.map((trip) =>{
-        return(
-        <option>{trip.name}</option>
+    const tripsList = trips.map((trip) => {
+        return (
+            <option value={trip.id}>{trip.name}</option>
         )
     })
 
     const coutryList = countries.map((country) => {
-        return(
-            <option>{country.nome}</option>
+        return (
+            <option value={country.nome}>{country.nome}</option>
         )
     })
     return (
@@ -101,7 +103,12 @@ export default function ApplicationFormPage() {
             <h1>Application Form Page</h1>
 
             <DivForm onSubmit={handleClick}>
-                <Select required>
+                <Select
+                    required
+                    name="trip"
+                    value={form.trip}
+                    onChange={onchange}
+                >
                     <option>Selecione sua viagem</option>
                     {tripsList}
                 </Select>
@@ -112,6 +119,7 @@ export default function ApplicationFormPage() {
                     value={form.name}
                     onChange={onChange}
                     type="text"
+                    pattern={"^.{2,}$"}
                 />
                 <Inputs
                     required
@@ -120,6 +128,7 @@ export default function ApplicationFormPage() {
                     value={form.age}
                     onChange={onChange}
                     type="number"
+                    min ={18}
                 />
                 <Inputs
                     required
@@ -128,6 +137,7 @@ export default function ApplicationFormPage() {
                     value={form.applicationText}
                     onChange={onChange}
                     type="text"
+                    pattern={"^.{30,}$"}
                 />
                 <Inputs
                     required
@@ -137,7 +147,12 @@ export default function ApplicationFormPage() {
                     onChange={onChange}
                     type="text"
                 />
-                <Select>
+                <Select
+                    required
+                    name="country"
+                    value={form.country}
+                    onChange={onChange}
+                >
                     <option>Selecione um país</option>
                     {coutryList}
                 </Select>

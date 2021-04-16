@@ -4,6 +4,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { goToAdminHomePage} from "../routes/coordinators";
 import usePrivatePage from "../hooks/usePrivatePage"
 import {DivContainer, DivButtons, Buttons} from '../components/Estilization'
+import {useParams} from 'react-router-dom'
 
 
 
@@ -39,6 +40,24 @@ const getTripDetail = (id) => {
     })
 }
 
+const decideCandidate = (id, status) => {
+    const token = window.localStorage.getItem("token");
+    const body = {
+        approve: status,
+    }
+    axios.put (`https://us-central1-labenu-apis.cloudfunctions.net/labeX/guilherme-mota-cruz/trips/${pathParams.id}/candidates/${id}/decide,`, body, {
+        headers:{
+            auth: token, 
+        }
+    })
+    .then((res) => {
+        getTripDetail()
+    })
+    .catch((err) =>{
+        console.log(err)
+        alert("Ocorreu um erro, tente novamente mais tarde")
+    })
+}
 
     return (
         <DivContainer>
@@ -48,6 +67,9 @@ const getTripDetail = (id) => {
             </DivButtons>
             <h1>Trip Details Page</h1>
             <p>{tripDetail.name}</p>
+            <h2>Candidatos pendentes</h2>
+
+            <h2>Candidatos aprovados</h2>
         </DivContainer>
     );
 }
