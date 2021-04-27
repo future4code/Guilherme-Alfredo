@@ -3,25 +3,25 @@ import { DivForm, MainContainer, Inputs, Button, DivSendButton, SignUp } from '.
 import useForm from '../../hooks/useForm'
 import { useHistory } from 'react-router'
 import { goToSignUpPage } from '../../routes/coordinator'
+import { login } from "../../services/user"
+import useUnProtectedPage from '../../hooks/useUnprotectedPage'
 
 const initialForm = {
     email: "",
     password: "",
 }
 
-
-
-const LoginPage = () => {
+const LoginPage = ({ setButtonText }) => {
+    useUnProtectedPage()
     const [form, onChange, clear] = useForm(initialForm);
     const history = useHistory()
 
     const handleClick = (event) => {
         event.preventDefault();
-        console.log(form)
+        login(form, history, setButtonText)
         clear();
     };
 
-    
     return (
         <MainContainer>
             <h1>LoginPage</h1>
@@ -32,9 +32,7 @@ const LoginPage = () => {
                     name="email"
                     value={form.email}
                     onChange={onChange}
-                    pattern={"[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$"}
                     type="text"
-
                 />
                 <Inputs
                     required
@@ -45,18 +43,15 @@ const LoginPage = () => {
                     type="password"
                 />
                 <DivSendButton>
-                    <Button
-
-                    >
-                    Fazer login
+                    <Button>
+                        Fazer login
                     </Button>
                 </DivSendButton>
             </DivForm>
-            <SignUp 
+            <SignUp
                 onClick={() => goToSignUpPage(history)}>
                 Cadastre-se aqui
             </SignUp>
-
         </MainContainer>
     )
 }
