@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { secondaryColor } from '../../constants/colors'
 
 export const MainContainer = styled.div`
     display:flex;
@@ -19,11 +20,11 @@ export const Inputs = styled.input`
     width: 100%;
     margin-top:20px;
     height: 30px;
-    border-radius: 24px;
+    border-radius: 10px;
     outline: 0;
 `
 export const Button = styled.button`
-    background-color: red;
+    background-color: ${secondaryColor};
     color: black;
     font-size: 1.4em;
     padding: 5px;

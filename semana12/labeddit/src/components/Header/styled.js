@@ -1,15 +1,15 @@
 import styled from 'styled-components'
+import { primaryColor, secondaryColor } from '../../constants/colors'
 
 export const Main = styled.header`
     width: 100%;
-    background-color: orange;
+    background-color: ${primaryColor};
     display: flex;
     justify-content: space-between;
     align-items: center;
 `
 
 export const Title = styled.h1`
-    color: black;
     letter-spacing: 2px;
     margin-left: 20px;
     cursor: pointer;
@@ -18,7 +18,7 @@ export const Title = styled.h1`
     }
 `
 export const Button = styled.button`
-background-color: red;
+background-color: ${secondaryColor};
     color: black;
     font-size: 1.4em;
     padding: 5px;

@@ -61,6 +61,7 @@ const PostDetailsPage = () => {
                 key={comment.id}
                 username={comment.username}
                 text={comment.text}
+                quantity={postComments.length}
                 >
             </CommentCard>
         )
