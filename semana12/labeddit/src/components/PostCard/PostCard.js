@@ -7,6 +7,7 @@ const PostCard = (props) => {
             <h1>{props.title}</h1>
             <p>{props.username}</p>
             <p>{props.text}</p>
+            <button onClick={props.postDetails}>Ver detalhes</button>
             </DivPosts>
     )
 }

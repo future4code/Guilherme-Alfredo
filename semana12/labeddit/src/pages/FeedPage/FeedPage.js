@@ -5,6 +5,8 @@ import { BASE_URL } from '../../constants/urls'
 import PostCard from '../../components/PostCard/PostCard'
 import { Main } from './styled'
 import useForm from '../../hooks/useForm'
+import { goToPostDetailsPage } from '../../routes/coordinator'
+import { useHistory } from 'react-router'
 
 const initialForm = {
     text: "",
@@ -13,56 +15,63 @@ const initialForm = {
 
 const FeedPage = () => {
     useProtectedPage()
+    const history = useHistory()
     const [form, onChange, clear] = useForm(initialForm);
     const [posts, setPosts] = useState([])
 
-    useEffect(() => {
-        getPosts()
-    }, [])
+useEffect(() => {
+    getPosts()
+}, [])
 
-    const handleClick = (event) => {
-        event.preventDefault();
-        createPost(form)
-        clear();
-    };
+const handleClick = (event) => {
+    event.preventDefault();
+    createPost(form)
+    clear();
+};
 
-    const getPosts = () => {
-        axios.get(`${BASE_URL}/posts`, {
-            headers: {
-                Authorization: window.localStorage.getItem("token")
-            }
-        })
-            .then((res) => {
-                
-                setPosts(res.data.posts)
-            })
-            .catch((err) => alert(err.response.data.message))
-    }
+const postDetails = (id) =>  {
+    goToPostDetailsPage(history, id)
+}
 
-    const createPost = () => {
-        axios.post(`${BASE_URL}/posts`, form, {
-            headers: {
-                Authorization: window.localStorage.getItem("token")
-            }
-        })
-        .then((res) => {
-            console.log(res.data)
-            setPosts([...posts, res])
-            getPosts()
-        })
-        .catch((err) => console.log(err))
-        
-    }
-    const postList = posts.map((post) => {
-        return (
-            <PostCard
-                username={post.username}
-                title={post.title}
-                text={post.text}
-            >
-            </PostCard>
-        )
+const getPosts = () => {
+    axios.get(`${BASE_URL}/posts`, {
+        headers: {
+        Authorization: window.localStorage.getItem("token")
+        }
     })
+    .then((res) => {
+        setPosts(res.data.posts)
+        console.log(res.data)
+        })
+    .catch((err) => alert(err.response.data.message))
+}
+
+const createPost = () => {
+    axios.post(`${BASE_URL}/posts`, form, {
+        headers: {
+        Authorization: window.localStorage.getItem("token")
+        }
+    })
+    .then((res) => {
+        setPosts([...posts, res])
+        getPosts()
+    })
+    .catch((err) => console.log(err))
+        
+}
+
+const postList = posts.map((post) => {
+    return (
+        <PostCard
+            key={post.id}
+            username={post.username}
+            title={post.title}
+            text={post.text}
+            postDetails={() => postDetails(post.id)}
+        >
+        </PostCard>
+    )
+})
 
     return (
         <Main>
