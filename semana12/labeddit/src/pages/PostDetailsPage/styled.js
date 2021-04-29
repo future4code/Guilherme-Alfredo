@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { secondaryColor } from '../../constants/colors'
+import { darkColor, secondaryColor } from '../../constants/colors'
 
 export const Main = styled.div`
     display:flex;
@@ -7,6 +7,12 @@ export const Main = styled.div`
     align-items: center;
     justify-content: flex-start;
     height: 80vh;
+`
+export const DivComment = styled.div`
+    box-shadow: 2px 2px 5px ${darkColor};
+    padding: 0 20px;
+    border-radius: 6px;
+    margin-top: 10px;
 `
 export const DivForm = styled.form`
     display:flex;

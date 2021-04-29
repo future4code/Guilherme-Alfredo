@@ -13,10 +13,11 @@ const PostCard = (props) => {
             </DivText>
             <DivButtons>
                 <VoteButton>
-                    <button>-</button>
-                    <button>+</button>
+                    <button onClick={props.deslike}>-</button>
+                    <p>{props.number}</p>
+                    <button onClick={props.like}>+</button>
                 </VoteButton>
-                <p></p>
+                <p>{props.comments} comentários</p>
                 <Button onClick={props.postDetails}>Ver detalhes</Button>
             </DivButtons>
         </DivPosts>

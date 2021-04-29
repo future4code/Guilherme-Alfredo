@@ -1,12 +1,12 @@
 import styled from 'styled-components'
-import { primaryColor } from '../../constants/colors'
+import { darkColor, primaryColor } from '../../constants/colors'
 
 export const DivComments = styled.div`
     display:flex;
     flex-direction: column;
     width: 50%;
     height: 300px;
-    border: 1px solid black;
+    box-shadow: 2px 2px 5px ${darkColor};
     border-radius: 6px;
     margin-top: 20px;
 `

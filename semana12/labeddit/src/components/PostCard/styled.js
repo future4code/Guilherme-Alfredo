@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { neutralColor, primaryColor, secondaryColor } from '../../constants/colors'
+import { darkColor, neutralColor, primaryColor, secondaryColor } from '../../constants/colors'
 
 
 export const DivPosts = styled.div`
@@ -7,9 +7,9 @@ export const DivPosts = styled.div`
     flex-direction: column;
     width: 50%;
     height: 500px;
-    border: 1px solid black;
     border-radius: 6px;
     margin-top: 20px;
+    box-shadow: 2px 2px 5px ${darkColor};
 `
 export const DivTitle = styled.div`
     background-color: ${primaryColor};
@@ -46,4 +46,6 @@ export const Button = styled.button`
 `
 export const VoteButton = styled.div`
     margin: 0 20px;
+    display:flex;
+    align-items: center;
 `

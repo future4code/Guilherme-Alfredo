@@ -6,7 +6,7 @@ import PostCard from '../../components/PostCard/PostCard'
 import { Button, DivForm, DivSendButton, Input, Main } from './styled'
 import useForm from '../../hooks/useForm'
 import { goToPostDetailsPage } from '../../routes/coordinator'
-import { useHistory } from 'react-router'
+import { useHistory, useParams } from 'react-router'
 
 const initialForm = {
     text: "",
@@ -18,6 +18,42 @@ const FeedPage = () => {
     const history = useHistory()
     const [form, onChange, clear] = useForm(initialForm);
     const [posts, setPosts] = useState([])
+
+    const Vote = (number, id, actualDirection) => {
+
+        const body = {
+            direction: number
+        }
+        axios.put(`${BASE_URL}/posts/${id}/vote`, body, {
+            headers: {
+                Authorization: window.localStorage.getItem("token")
+            }
+        })
+            .then((res) => {
+                let postsVote = [...posts]
+                postsVote.forEach((post) => {
+                    if (actualDirection === number) {
+                        if (post.id === id) {
+                            post.userVoteDirection = 0
+                            if (number === 1) {
+                                post.votesCount -= 1
+                            } else if (number === -1)
+                                post.votesCount += 1
+                        }
+                    } else {
+                        if (post.id === id) {
+                            post.userVoteDirection = number
+                            if (number === 1) {
+                                post.votesCount += 1
+                            } else if (number === -1)
+                                post.votesCount -= 1
+                        }
+                    }
+                })
+                setPosts(postsVote)
+            })
+            .catch((err) => console.log(err))
+    }
 
     useEffect(() => {
         getPosts()
@@ -60,6 +96,7 @@ const FeedPage = () => {
 
     }
 
+        
     const postList = posts.map((post) => {
         return (
             <PostCard
@@ -68,6 +105,10 @@ const FeedPage = () => {
                 title={post.title}
                 text={post.text}
                 postDetails={() => postDetails(post.id)}
+                like={() => Vote(+1, post.id, post.userVoteDirection)}
+                deslike={() => Vote(-1, post.id, post.userVoteDirection)}
+                number={post.votesCount}
+                comments={post.commentsCount}
             >
             </PostCard>
         )
@@ -78,7 +119,7 @@ const FeedPage = () => {
             <DivForm onSubmit={handleClick}>
                 <Input
                     required
-                    placeholder="título"
+                    placeholder="título do post"
                     name="title"
                     value={form.title}
                     onChange={onChange}
@@ -86,7 +127,7 @@ const FeedPage = () => {
                 />
                 <Input
                     required
-                    placeholder="texto"
+                    placeholder="conteúdo"
                     name="text"
                     value={form.text}
                     onChange={onChange}
@@ -98,8 +139,8 @@ const FeedPage = () => {
                     </Button>
                 </DivSendButton>
             </DivForm>
-            <h1>FeedPage</h1>
-            {postList}
+            <h1>Posts</h1>
+            {postList[0] ? postList : <p>Carregando...</p>}
         </Main>
     )
 }
