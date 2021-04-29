@@ -1,14 +1,24 @@
 import React from 'react'
-import { DivComments } from './styled'
+import { DivComment, DivComments, DivUser, VoteButton, DivButtons, NumberComments } from './styled'
 
 
 const CommentCard = (props) => {
     return (
-        
+
         <DivComments>
-            <h1>{props.title}</h1>
-            <p>{props.username}</p>
-            <p>{props.text}</p>
+            <DivUser>
+                <h3>{props.username}</h3>
+            </DivUser>
+            <DivComment>
+                <p>{props.text}</p>
+            </DivComment>
+            <DivButtons>
+            <VoteButton>
+                    <button>-</button>
+                    <button>+</button>
+            </VoteButton>
+                    <NumberComments>Comentários</NumberComments>
+            </DivButtons>
         </DivComments>
     )
 }

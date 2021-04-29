@@ -3,7 +3,7 @@ import { useParams } from 'react-router'
 import useProtectedPage from '../../hooks/useProtectedPage'
 import axios from 'axios'
 import { BASE_URL } from '../../constants/urls'
-import { Main } from './styled'
+import { DivForm, Main, Input, DivSendButton, Button  } from './styled'
 import CommentCard from '../../components/CommentCard/CommentCard'
 import useForm from '../../hooks/useForm'
 
@@ -61,11 +61,11 @@ const PostDetailsPage = () => {
                 key={comment.id}
                 username={comment.username}
                 text={comment.text}
-                quantity={postComments.length}
                 >
             </CommentCard>
         )
     })
+
     return (
         <Main>
             <h1>PostDetailsPage</h1>
@@ -73,20 +73,20 @@ const PostDetailsPage = () => {
             <h3>Título: {postDetails.title}</h3>
             <p>{postDetails.text}</p>
 
-            <form onSubmit={handleClick}>
-                <input
+            <DivForm onSubmit={handleClick}>
+                <Input
                     placeholder="deixe um comentário neste post"
                     type="text"
                     name="text"
                     value={form.text}
                     onChange={onChange}
                 />
-                <div>
-                    <button>
-                        Criar comentário
-                    </button>
-                </div>
-            </form>
+                <DivSendButton>
+                    <Button>
+                        enviar comentário
+                    </Button>
+                </DivSendButton>
+            </DivForm>
 
             <h2>Comentários</h2>
             {commentsList}
