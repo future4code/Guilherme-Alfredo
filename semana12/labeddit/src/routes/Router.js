@@ -9,7 +9,6 @@ import SignUpPage from '../pages/SignUpPage/SignUpPage'
 
 const Router = ({ setButtonText}) => {
     return (
-
         <Switch>
             <Route exact path="/login">
                 <LoginPage setButtonText={setButtonText}/>
@@ -27,7 +26,6 @@ const Router = ({ setButtonText}) => {
                 <ErrorPage />
             </Route>
         </Switch>
-
     )
 }
 

@@ -34,16 +34,16 @@ const PostDetailsPage = () => {
             }
         })
             .then((res) => {
+                const listOfComments = res.data.post.comments.filter((comment) => {
+                    return typeof comment.text === "string"
+                })
                 setPostDetails(res.data.post)
-                setPostComments(res.data.post.comments)
+                setPostComments(listOfComments)
             })
             .catch((err) => alert(err.response.data.message))
     }
 
-    console.log(postComments)
-
     const Vote = (number, id, actualDirection) => {
-
         const body = {
             direction: number
         }
@@ -68,14 +68,12 @@ const PostDetailsPage = () => {
                     } else if (number === -1)
                         postsVote.votesCount -= 1
                 }
-
                 setPostDetails(postsVote)
             })
             .catch((err) => console.log(err))
     }
 
     const commentVote = (number, id, actualDirection) => {
-
         const body = {
             direction: number
         }
@@ -116,11 +114,11 @@ const PostDetailsPage = () => {
                 Authorization: window.localStorage.getItem("token")
             }
         })
-            .then((res) => {
-                setPostComments([...postComments, res])
-                getPostDetail()
-            })
-            .catch((err) => console.log(err))
+        .then((res) => {
+            setPostComments([...postComments, res])
+            getPostDetail()
+        })
+        .catch((err) => console.log(err))
     }
 
     const commentsList = postComments.map((comment) => {
@@ -136,12 +134,11 @@ const PostDetailsPage = () => {
             </CommentCard>
         )
     })
-
     return (
         <Main>
             <DivComment>
-                <h2>Usuário: {postDetails.username}</h2>
                 <h3>Título: {postDetails.title}</h3>
+                <h4>Usuário: {postDetails.username}</h4>
                 <p>{postDetails.text}</p>
                 <DivVotes>
                     <DivVoteButtons>
@@ -162,14 +159,12 @@ const PostDetailsPage = () => {
                     onChange={onChange}
                 />
                 <DivSendButton>
-                    <Button>
-                        enviar comentário
-                    </Button>
+                    <Button> enviar comentário </Button>
                 </DivSendButton>
             </DivForm>
-
             <h2>Comentários</h2>
-            {commentsList}
+            {commentsList.length === 0 ? <p>Não existem comentários a respeito deste post</p> :
+            commentsList}
         </Main>
     )
 }

@@ -8,7 +8,6 @@ export const Main = styled.header`
     justify-content: space-between;
     align-items: center;
 `
-
 export const Title = styled.h1`
     letter-spacing: 2px;
     margin-left: 20px;
@@ -28,7 +27,6 @@ background-color: ${secondaryColor};
     cursor: pointer;
     margin: 0 20px;
     border-radius: 6px;
-
     :active { 
         transform: scale(0.92);  
     }

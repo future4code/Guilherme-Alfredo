@@ -18,7 +18,7 @@ const PostCard = (props) => {
                     <VoteButton onClick={props.like}>🔼</VoteButton>
                 </DivVoteButton>
                 <p>{props.comments} comentários</p>
-                <Button onClick={props.postDetails}>Ver detalhes</Button>
+                <Button onClick={props.postDetails}>Ver comentários</Button>
             </DivButtons>
         </DivPosts>
     )

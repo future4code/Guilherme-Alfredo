@@ -1,7 +1,6 @@
 import React from 'react'
 import { DivComment, DivComments, DivUser, VoteButton, DivButtons, NumberComments, Button } from './styled'
 
-
 const CommentCard = (props) => {
     return (
 

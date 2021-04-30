@@ -66,4 +66,5 @@ export const Button = styled.button`
 export const VoteButton = styled.button`
     margin: 5px;
     background-color:${neutralColor};
+    cursor: pointer;
 `

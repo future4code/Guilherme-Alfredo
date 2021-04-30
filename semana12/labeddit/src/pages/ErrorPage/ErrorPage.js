@@ -1,10 +1,11 @@
 import React from 'react'
+import { Main } from './styled'
 
 const ErrorPage = () => {
     return (
-        <div>
-            <h1>ErrorPage</h1>
-        </div>
+        <Main>
+            <h1>Esta página não existe, favor conferir o endereço digitado</h1>
+        </Main>
     )
 }
 

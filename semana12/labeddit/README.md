@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# LabEddit
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Ferramentas utilizadas 🔧
 
-## Available Scripts
+- React Js — Biblioteca Javascript para construir interfaces;
+- Axios - Biblioteca para fazer requisições do navegador;
+- Styled-component;
+- React-router-dom;
+- Postman
 
-In the project directory, you can run:
+## Objetivo do Projeto 📌:
 
-### `npm start`
+Implementar uma rede social com cadastro, login, posts, likes e comentários. Para isso, o projeto será baseado no **[reddit.com](https://reddit.com).**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Requisitos: 
 
-### `npm test`
+A rede social terá 4 páginas:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Página de Login
+- Página de Cadastro
+- Página de Feed (Lista de Posts)
+- Página do Post
 
-### `npm run build`
+### Funcionalidades:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Página de login: esta página possui dois campos de texto: email e senha. Ao fazer o login, o usuário é redirecionado para a página de feed. A página possui também um botão "Cadastre-se aqui", que leva o usuário para a página de cadastro.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Página de cadastro: A página de cadastro possui 3 campos: nome de usuário, email e senha. Após cadastrar, o usuário é redirecionado para a página de feed, já estando logado.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Página de Feed: A página de feed mostra todos os posts, além de possibilitar a criação de um novo post através de um formulário. 
+Essa página só pode ser acessada por um usuário logado. Caso o usuário não esteja logado, ele é redirecionado para a página de login. O formulário possui o campo de título e de texto do post. Cada post mostrará o nome de usuário que postou, o título, o texto do post, o número de votos (positivo ou negativo) e o número de comentários. Quando o usuário clicar no botão de ver comentários, ele é redirecionado para a página do respectivo post. 
 
-### `npm run eject`
+- Página do Post: A página de um post mostrao mesmo card de post da página de feed, com o usuário, texto, curtidas e número de comentários. Essa página só pode ser acessada por um usuário logado. Caso o usuário não esteja logado, deverá ser redirecionado para a página de login. Esta página também possui um formulário para criação de novos comentários. 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

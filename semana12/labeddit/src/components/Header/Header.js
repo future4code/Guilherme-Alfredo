@@ -7,7 +7,6 @@ const Header = ({buttonText, setButtonText}) => {
     const token = localStorage.getItem("token")
     const history = useHistory()
     
-
     const logout = () => {
         localStorage.removeItem("token")
     }

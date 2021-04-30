@@ -5,12 +5,12 @@ import Router from './routes/Router'
 
 const App = () => {
   const token = localStorage.getItem("token")
-  const [buttonText, setButtonText] = useState(token? "Logout" : "Login")
+  const [buttonText, setButtonText] = useState(token ? "Logout" : "Login")
   return (
     <div >
       <BrowserRouter>
-      <Header buttonText={buttonText} setButtonText={setButtonText}/>
-      <Router buttonText={buttonText} setButtonText={setButtonText}/>
+        <Header buttonText={buttonText} setButtonText={setButtonText} />
+        <Router buttonText={buttonText} setButtonText={setButtonText} />
       </BrowserRouter>
     </div>
   );

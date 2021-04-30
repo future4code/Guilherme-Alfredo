@@ -3,10 +3,10 @@ import useProtectedPage from '../../hooks/useProtectedPage'
 import axios from 'axios'
 import { BASE_URL } from '../../constants/urls'
 import PostCard from '../../components/PostCard/PostCard'
-import { Button, DivForm, DivSendButton, Input, Main } from './styled'
+import { BigInput, Button, DivForm, DivSendButton, Input, Main } from './styled'
 import useForm from '../../hooks/useForm'
 import { goToPostDetailsPage } from '../../routes/coordinator'
-import { useHistory,} from 'react-router'
+import { useHistory, } from 'react-router'
 
 const initialForm = {
     text: "",
@@ -20,7 +20,6 @@ const FeedPage = () => {
     const [posts, setPosts] = useState([])
 
     const Vote = (number, id, actualDirection) => {
-
         const body = {
             direction: number
         }
@@ -96,7 +95,6 @@ const FeedPage = () => {
 
     }
 
-        
     const postList = posts.map((post) => {
         return (
             <PostCard
@@ -113,7 +111,6 @@ const FeedPage = () => {
             </PostCard>
         )
     })
-
     return (
         <Main>
             <DivForm onSubmit={handleClick}>
@@ -134,9 +131,7 @@ const FeedPage = () => {
                     type="text"
                 />
                 <DivSendButton>
-                    <Button>
-                        Criar post
-                    </Button>
+                    <Button> Criar post </Button>
                 </DivSendButton>
             </DivForm>
             <h1>Posts</h1>

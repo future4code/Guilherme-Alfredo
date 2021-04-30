@@ -30,16 +30,15 @@ export const DivButtons = styled.div`
     border-bottom-right-radius: 6px;
     background-color: ${primaryColor};
 `
-
 export const Button = styled.button`
     background-color: ${secondaryColor};
     font-size: 1em;
     padding: 4px;
     border: none;
     transition: all .4s;
-    cursor: pointer;
     margin: 0 20px;
     border-radius: 6px;
+    cursor: pointer;
     :active { 
         transform: scale(0.92);  
     }
@@ -52,4 +51,5 @@ export const DivVoteButton = styled.div`
 export const VoteButton = styled.button`
     margin: 5px;
     background-color:${neutralColor};
+    cursor: pointer;
 `

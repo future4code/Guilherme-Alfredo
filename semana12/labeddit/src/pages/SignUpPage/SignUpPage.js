@@ -22,7 +22,7 @@ const SignUpPage = ({setButtonText}) => {
 
     return (
         <MainContainer>
-            <h1>SignUpPage</h1>
+            <h1>Cadastro</h1>
             <DivForm onSubmit={handleClick}>
                 <Inputs
                     required
@@ -49,9 +49,7 @@ const SignUpPage = ({setButtonText}) => {
                     type="password"
                 />
                 <DivSendButton>
-                    <Button>
-                    Cadastrar
-                    </Button>
+                    <Button> Cadastrar </Button>
                 </DivSendButton>
             </DivForm>
         </MainContainer>

@@ -12,7 +12,7 @@ export const DivForm = styled.form`
     display:flex;
     flex-direction:column;
     width: 25%;
-    height:30%;
+    height: 40%;
     align-items: center;
 `
 export const Input = styled.input`

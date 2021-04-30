@@ -24,7 +24,7 @@ const LoginPage = ({ setButtonText }) => {
 
     return (
         <MainContainer>
-            <h1>LoginPage</h1>
+            <h1>Login</h1>
             <DivForm onSubmit={handleClick}>
                 <Inputs
                     required

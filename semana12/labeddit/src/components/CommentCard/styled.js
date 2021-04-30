@@ -10,14 +10,12 @@ export const DivComments = styled.div`
     border-radius: 6px;
     margin-top: 20px;
 `
-
 export const DivUser = styled.div`
     background-color: ${primaryColor};
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
     padding: 0 10px;
 `
-
 export const DivComment = styled.div`
     padding: 0 10px;
 `
@@ -40,4 +38,5 @@ export const NumberComments = styled.p`
 export const Button = styled.button`
     margin: 5px;
     background-color:${neutralColor};
+    cursor: pointer;
 `
