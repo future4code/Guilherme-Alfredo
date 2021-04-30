@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, DivButtons, DivPosts, DivText, DivTitle, VoteButton } from './styled'
+import { Button, DivButtons, DivPosts, DivText, DivTitle, VoteButton, DivVoteButton} from './styled'
 
 const PostCard = (props) => {
     return (
@@ -12,11 +12,11 @@ const PostCard = (props) => {
             <p>{props.text}</p>
             </DivText>
             <DivButtons>
-                <VoteButton>
-                    <button onClick={props.deslike}>-</button>
+                <DivVoteButton>
+                    <VoteButton onClick={props.deslike}>🔽</VoteButton>
                     <p>{props.number}</p>
-                    <button onClick={props.like}>+</button>
-                </VoteButton>
+                    <VoteButton onClick={props.like}>🔼</VoteButton>
+                </DivVoteButton>
                 <p>{props.comments} comentários</p>
                 <Button onClick={props.postDetails}>Ver detalhes</Button>
             </DivButtons>

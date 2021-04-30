@@ -1,5 +1,5 @@
 import React from 'react'
-import { DivComment, DivComments, DivUser, VoteButton, DivButtons, NumberComments } from './styled'
+import { DivComment, DivComments, DivUser, VoteButton, DivButtons, NumberComments, Button } from './styled'
 
 
 const CommentCard = (props) => {
@@ -14,10 +14,10 @@ const CommentCard = (props) => {
             </DivComment>
             <DivButtons>
             <VoteButton>
-                    <button>-</button>
-                    <button>+</button>
+                    <Button onClick={props.deslike}>🔽</Button>
+                    <p>{props.number}</p>
+                    <Button onClick={props.like}>🔼</Button>
             </VoteButton>
-                    <NumberComments>Comentários</NumberComments>
             </DivButtons>
         </DivComments>
     )

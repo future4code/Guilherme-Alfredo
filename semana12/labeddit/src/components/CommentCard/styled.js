@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { darkColor, primaryColor } from '../../constants/colors'
+import { darkColor, neutralColor, primaryColor } from '../../constants/colors'
 
 export const DivComments = styled.div`
     display:flex;
@@ -23,7 +23,6 @@ export const DivComment = styled.div`
 `
 export const DivButtons = styled.div`
     display:flex;
-    justify-content: space-between;
     align-items: center;
     width: 100%;
     border-bottom-left-radius: 6px;
@@ -32,7 +31,13 @@ export const DivButtons = styled.div`
 `
 export const VoteButton = styled.div`
     margin: 0 20px;
+    display: flex;
+    align-items: center;
 `
 export const NumberComments = styled.p`
     margin-right: 10px;
+`
+export const Button = styled.button`
+    margin: 5px;
+    background-color:${neutralColor};
 `

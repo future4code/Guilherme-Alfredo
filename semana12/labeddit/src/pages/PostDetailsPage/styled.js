@@ -10,12 +10,13 @@ export const Main = styled.div`
 `
 export const DivComment = styled.div`
     display: flex;
+    width: 60%;
     flex-direction: column;
     box-shadow: 2px 2px 5px ${darkColor};
     padding: 0 20px;
     border-radius: 6px;
     margin-top: 10px;
-    background-color: ${neutralColor}
+    background-color: ${neutralColor};
 `
 export const DivVotes = styled.div`
     display: flex;
@@ -61,4 +62,8 @@ export const Button = styled.button`
     :active { 
         transform: scale(0.92);  
     }
+`
+export const VoteButton = styled.button`
+    margin: 5px;
+    background-color:${neutralColor};
 `

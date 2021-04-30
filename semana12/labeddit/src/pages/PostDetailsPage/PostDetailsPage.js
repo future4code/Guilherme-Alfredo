@@ -3,7 +3,7 @@ import { useParams } from 'react-router'
 import useProtectedPage from '../../hooks/useProtectedPage'
 import axios from 'axios'
 import { BASE_URL } from '../../constants/urls'
-import { DivForm, Main, Input, DivSendButton, Button, DivComment, DivVotes, DivVoteButtons } from './styled'
+import { DivForm, Main, Input, DivSendButton, Button, DivComment, DivVotes, DivVoteButtons, VoteButton } from './styled'
 import CommentCard from '../../components/CommentCard/CommentCard'
 import useForm from '../../hooks/useForm'
 
@@ -76,6 +76,38 @@ const PostDetailsPage = () => {
 
     const commentVote = (number, id, actualDirection) => {
 
+        const body = {
+            direction: number
+        }
+        axios.put(`${BASE_URL}/posts/${params.id}/comment/${id}/vote`, body, {
+            headers: {
+                Authorization: window.localStorage.getItem("token")
+            }
+        })
+        .then((res) => {
+            let infoComments = [...postDetails.comments]
+            infoComments.forEach((comment) => {
+                if (actualDirection === number) {
+                    if(comment.id === id) {
+                        comment.userVoteDirection = 0
+                        if (number === 1) {
+                            comment.votesCount -=1
+                        } else if (number === -1)
+                        comment.votesCount +=1
+                    }
+                } else {
+                    if(comment.id === id) {
+                        comment.userVoteDirection = number
+                        if (number === 1) {
+                            comment.votesCount +=1
+                        } else if (number === -1)
+                        comment.votesCount -=1
+                    }
+                }
+            })
+            setPostDetails({...postDetails, comments: infoComments})
+        })
+        .catch((err) => console.log(err))
     }
 
     const createComment = () => {
@@ -97,6 +129,9 @@ const PostDetailsPage = () => {
                 key={comment.id}
                 username={comment.username}
                 text={comment.text}
+                like={() => commentVote(+1, comment.id, comment.userVoteDirection)}
+                deslike={() => commentVote(-1, comment.id, comment.userVoteDirection)}
+                number={comment.votesCount}
             >
             </CommentCard>
         )
@@ -110,9 +145,9 @@ const PostDetailsPage = () => {
                 <p>{postDetails.text}</p>
                 <DivVotes>
                     <DivVoteButtons>
-                        <button onClick={() => Vote(-1, postDetails.id, postDetails.userVoteDirection)}>-</button>
+                        <VoteButton onClick={() => Vote(-1, postDetails.id, postDetails.userVoteDirection)}>🔽</VoteButton>
                         <p>{postDetails.votesCount}</p>
-                        <button onClick={() => Vote(+1, postDetails.id, postDetails.userVoteDirection)}>+</button>
+                        <VoteButton onClick={() => Vote(+1, postDetails.id, postDetails.userVoteDirection)}>🔼</VoteButton>
                     </DivVoteButtons>
                     <p>{postDetails.commentsCount} comentários</p>
                 </DivVotes>

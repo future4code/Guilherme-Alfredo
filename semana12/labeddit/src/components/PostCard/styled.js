@@ -44,8 +44,12 @@ export const Button = styled.button`
         transform: scale(0.92);  
     }
 `
-export const VoteButton = styled.div`
+export const DivVoteButton = styled.div`
     margin: 0 20px;
     display:flex;
     align-items: center;
+`
+export const VoteButton = styled.button`
+    margin: 5px;
+    background-color:${neutralColor};
 `
