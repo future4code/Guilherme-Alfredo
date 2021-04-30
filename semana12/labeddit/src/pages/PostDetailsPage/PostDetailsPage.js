@@ -3,7 +3,7 @@ import { useParams } from 'react-router'
 import useProtectedPage from '../../hooks/useProtectedPage'
 import axios from 'axios'
 import { BASE_URL } from '../../constants/urls'
-import { DivForm, Main, Input, DivSendButton, Button, DivComment } from './styled'
+import { DivForm, Main, Input, DivSendButton, Button, DivComment, DivVotes, DivVoteButtons } from './styled'
 import CommentCard from '../../components/CommentCard/CommentCard'
 import useForm from '../../hooks/useForm'
 
@@ -42,6 +42,42 @@ const PostDetailsPage = () => {
 
     console.log(postComments)
 
+    const Vote = (number, id, actualDirection) => {
+
+        const body = {
+            direction: number
+        }
+        axios.put(`${BASE_URL}/posts/${id}/vote`, body, {
+            headers: {
+                Authorization: window.localStorage.getItem("token")
+            }
+        })
+            .then((res) => {
+                let postsVote = { ...postDetails }
+                postsVote.userVoteDirection = 0
+                if (actualDirection === number) {
+                    postsVote.userVoteDirection = 0
+                    if (number === 1) {
+                        postsVote.votesCount -= 1
+                    } else if (number === -1)
+                        postsVote.votesCount += 1
+                } else {
+                    postsVote.userVoteDirection = number
+                    if (number === 1) {
+                        postsVote.votesCount += 1
+                    } else if (number === -1)
+                        postsVote.votesCount -= 1
+                }
+
+                setPostDetails(postsVote)
+            })
+            .catch((err) => console.log(err))
+    }
+
+    const commentVote = (number, id, actualDirection) => {
+
+    }
+
     const createComment = () => {
         axios.post(`${BASE_URL}/posts/${params.id}/comment`, form, {
             headers: {
@@ -72,6 +108,14 @@ const PostDetailsPage = () => {
                 <h2>Usuário: {postDetails.username}</h2>
                 <h3>Título: {postDetails.title}</h3>
                 <p>{postDetails.text}</p>
+                <DivVotes>
+                    <DivVoteButtons>
+                        <button onClick={() => Vote(-1, postDetails.id, postDetails.userVoteDirection)}>-</button>
+                        <p>{postDetails.votesCount}</p>
+                        <button onClick={() => Vote(+1, postDetails.id, postDetails.userVoteDirection)}>+</button>
+                    </DivVoteButtons>
+                    <p>{postDetails.commentsCount} comentários</p>
+                </DivVotes>
             </DivComment>
 
             <DivForm onSubmit={handleClick}>

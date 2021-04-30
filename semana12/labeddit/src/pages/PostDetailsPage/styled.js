@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { darkColor, secondaryColor } from '../../constants/colors'
+import { darkColor, neutralColor, secondaryColor } from '../../constants/colors'
 
 export const Main = styled.div`
     display:flex;
@@ -9,11 +9,24 @@ export const Main = styled.div`
     height: 80vh;
 `
 export const DivComment = styled.div`
+    display: flex;
+    flex-direction: column;
     box-shadow: 2px 2px 5px ${darkColor};
     padding: 0 20px;
     border-radius: 6px;
     margin-top: 10px;
+    background-color: ${neutralColor}
 `
+export const DivVotes = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+`
+export const DivVoteButtons = styled.div`
+    display: flex;
+    align-items: center;
+`
+
 export const DivForm = styled.form`
     display:flex;
     flex-direction:column;

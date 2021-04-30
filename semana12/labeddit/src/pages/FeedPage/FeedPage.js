@@ -6,7 +6,7 @@ import PostCard from '../../components/PostCard/PostCard'
 import { Button, DivForm, DivSendButton, Input, Main } from './styled'
 import useForm from '../../hooks/useForm'
 import { goToPostDetailsPage } from '../../routes/coordinator'
-import { useHistory, useParams } from 'react-router'
+import { useHistory,} from 'react-router'
 
 const initialForm = {
     text: "",
