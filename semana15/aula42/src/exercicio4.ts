@@ -1,0 +1,4 @@
+//a) rodaria o comando tsc + nome do arquivo no terminal 
+//b) sim, pois teria que passar também o caminho para chegar no arquivo específico. 
+//c) sim, para transpilar vários arquivos de uma só vez podemos inserir o comando tsc com os nomes de cada arquivo separado por espaço, ou passar o comando sem o nome de nenhum arquivo, dessa dorma ele vai transpilar tudo que encontrar. 
+//d) Existem algumas configurações que estão diferentes. Devemos alterar a versão do target para "es6", descomentar o rootDir e colocar "./src", descomentar o outDir e colocar "./build", descomentar sourceMap, removeComments e noImplicitAny. 
