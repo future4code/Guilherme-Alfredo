@@ -112,14 +112,14 @@ b) Escreva uma query que retorne somente o nome, id e nota de avaliação dos fi
 
 ## Exercício 4 
 
-a) Escreva uma query que retorne todos os filmes e suas avaliações (com essa avaliação existindo ou não). A sua query deve retornar somente o nome, id, nota do filme e comentário.
+a) Faça uma query que retorne todos os filmes e suas avaliações (com essa avaliação existindo ou não). A sua query deve retornar somente o nome, id, nota do filme e comentário.
 
     SELECT Movie.id, Movie.title, Rating.rate, Rating.comment
     FROM Movie
     LEFT JOIN Rating
     ON Movie.id = movie_id;
 
-b) Escreva uma query que retorne todas as relações de elenco, junto com as informações do filme. A sua query deve retornar o id do filme, título do filme e id do ator.
+b) Faça uma query que retorne todas as relações de elenco, junto com as informações do filme. A sua query deve retornar o id do filme, título do filme e id do ator.
 
     SELECT Movie.id, Movie.title, Actor.id
     FROM Actor, Movie
