@@ -30,7 +30,7 @@ const signUp = async (req: Request, res: Response) => {
         }
 
         if(password.length < 6 ) {
-            throw new Error ("Your password must contain 6 characters")
+            throw new Error ("Your password must contain min 6 characters")
         }
 
         await createUsers(id, name, email, hashPassword)
@@ -43,5 +43,6 @@ const signUp = async (req: Request, res: Response) => {
         res.status(400).send({message: error.message})
     }
 }
+
 
 export default signUp;
