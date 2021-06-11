@@ -18,19 +18,23 @@ export default async function getRecipesById(req: Request, res: Response): Promi
 
         const recipe = await recipeById(id)
 
-        const date = new Date(recipe[0].createAt).toISOString()
+        const date = new Date(recipe.createAt).toISOString()
         const splitDate = date.split("T")
         const splittedDate = splitDate[0].split("-")
         const correctedDate = `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}`
+        console.log(correctedDate)
 
-        recipe[0].createAt = correctedDate
-
-
-        res.status(200).send(
-            recipe[0]
+        res.status(200).send({
+            id: recipe.id,
+            title: recipe.title,
+            description: recipe.description,
+            createAt: correctedDate
+        }
+            
         )
 
     } catch (error) {
         res.status(400).send({message: error. message})
+        
     }
 }
