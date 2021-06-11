@@ -18,7 +18,15 @@ export default async function getUser(req: Request, res: Response): Promise<void
             email: user.email
         })
 
+        
     } catch (error) {
         res.status(400).send({message: error.message})
+        
+        let errorMessage = error.message
+
+        if(error.message.includes("undefined")) {
+
+            errorMessage = "This user doesn't exist"
+        }
     }
 }

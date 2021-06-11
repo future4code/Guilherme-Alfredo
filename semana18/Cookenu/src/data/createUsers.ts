@@ -12,7 +12,7 @@ const createUsers = async (
         id,
         name,
         email,
-        password
+        password,
     })
     .into ("Cookenu_Users")
 }
