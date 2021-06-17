@@ -1,9 +1,9 @@
-import { hash } from "../services/hashManager"
-import { user } from "../model/user"
-import { generateToken } from "../services/authenticator"
-import { generateId } from "../services/idGenerator";
+import { hash } from "../../services/hashManager"
+import { user } from "../../model/user"
+import { generateToken } from "../../services/authenticator"
+import { generateId } from "../../services/idGenerator";
 import { response } from "express";
-import { insertUser } from "../data/user/insertUser";
+import { insertUser } from "../../data/user/insertUser";
 
 
 export const signupBusiness = async (
