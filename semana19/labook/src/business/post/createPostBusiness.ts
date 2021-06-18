@@ -1,26 +1,41 @@
-import { insertPost } from "../../data/post/insertPost"
-import { post } from "../../model/post"
+import { PostDatabase } from "../../data/post/PostDatabase"
+import { postData } from "../../model/post"
+import { getTokenData } from "../../services/authenticator"
 import { generateId } from "../../services/idGenerator"
+import { CustomError } from "../errors/CustomError"
 
 
 
 export const createPostBusiness = async (
-    post: post
+    postData: postData,
+    token: string
 ) => {
-    
-    if(
-        !post.photo ||
-        !post.description ||
-        !post.type ||
-        !post.createdAt
+
+    const author = getTokenData(token)
+    const author_id = author.id
+
+    const dateArray = postData.created_at.split("/")
+    const day = dateArray[0]
+    const month = dateArray[1]
+    const year = dateArray[2]
+    const correctDate = `${year}-${month}-${day}`
+    postData.created_at = correctDate
+
+    if (
+        !postData.photo ||
+        !postData.description ||
+        !postData.type ||
+        !postData.created_at
     ) {
-        throw new Error('"photo", "description", "type", "createAt" are required')
+        throw new CustomError(406, '"photo", "description", "type", "createAt" are required')
     }
 
     const id: string = generateId()
 
-    await insertPost({
-        ...post,
-        id
+    const pd = new PostDatabase("labook_posts")
+    await pd.createPost({
+        ...postData,
+        id,
+        author_id
     })
 }

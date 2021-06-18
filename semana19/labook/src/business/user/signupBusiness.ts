@@ -1,32 +1,35 @@
 import { hash } from "../../services/hashManager"
-import { user } from "../../model/user"
+import { user, userData } from "../../model/user"
 import { generateToken } from "../../services/authenticator"
 import { generateId } from "../../services/idGenerator";
 import { response } from "express";
-import { insertUser } from "../../data/user/insertUser";
+
+import { UserDatabase } from "../../data/user/UserDatabase";
 
 
 export const signupBusiness = async (
-    user: user
+    userData: userData
 ):Promise<string> => {
 
-    if (!user.name || !user.email || !user.password) {
+    if (!userData.name || !userData.email || !userData.password) {
         response.statusCode = 406  
         throw new Error('"name", "email" and "password" must be provided')
     }
 
+    
     const id: string = generateId()
-    const cypherPassword = await hash(user.password);
-
+    const cypherPassword = await hash(userData.password);
+    
     const newUser: user = {
-        ...user,
+        ...userData,
         password: cypherPassword,
         id: id
     }
     
-    await insertUser(newUser)
+    const ud = new UserDatabase("labook_users")
     
-
+    await ud.insertUser(newUser)
+    
     const token: string = generateToken({ id: newUser.id })
 
     return token

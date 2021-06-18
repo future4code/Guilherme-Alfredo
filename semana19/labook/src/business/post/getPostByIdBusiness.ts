@@ -1,23 +1,27 @@
-import { selectPostById } from "../../data/post/selectPostById"
+import { PostDatabase } from "../../data/post/PostDatabase"
+import { post } from "../../model/post"
+import { NotFoundError } from "../errors/NotFoundError"
 
 
 export const getPostByIdBusiness = async (
     id: string
-) => {
-    const result = await selectPostById(id)
+): Promise<post>=> {
+
+
+    const pd = new PostDatabase("labook_posts")
+    
+    const result = await pd.getPostById(id) 
+
+    const date = new Date(result.created_at).toISOString()
+    const splitDate = date.split("T")
+    const splittedDate = splitDate[0].split("-")
+    const correctedDate = `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}`
+
+    result.created_at = correctedDate
 
     if(!result) {
-        throw new Error ("Post not found")
+        throw new NotFoundError()
     }
 
-    const post = {
-        id: result[0].id,
-        photo: result[0].photo,
-        description: result[0].description,
-        type: result[0].type,
-        createdAt: result[0].created_at,
-        authorId: result[0].author_id,
-    }
-
-    return post 
+    return result
 }

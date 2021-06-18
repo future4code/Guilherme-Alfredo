@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { UnauthorizedError } from "../../business/errors/UnauthorizedError";
 import { getPostByIdBusiness } from "../../business/post/getPostByIdBusiness";
 
 
@@ -12,7 +13,15 @@ export const getPostById = async (
 
         const { id } = req.params
 
-        const post = getPostByIdBusiness(id)
+        const post = await getPostByIdBusiness(id)
+
+        const token: string = req.headers.authorization as string
+
+        if(!token){
+            throw new UnauthorizedError()
+        }
+
+
         res.status(200).send({ message, post })
 
     } catch (error) {

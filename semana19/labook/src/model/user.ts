@@ -9,3 +9,8 @@ export type user = {
     password: string
 }
 
+export type userData = {
+    name: string,
+    email: string,
+    password: string
+}

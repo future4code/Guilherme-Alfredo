@@ -1,8 +1,9 @@
 import { response } from "express"
-import { selectUserByEmail } from "../../data/user/selectUserByEmail"
+import { UserDatabase } from "../../data/user/UserDatabase"
 import { user } from "../../model/user"
 import { generateToken } from "../../services/authenticator"
 import { compare } from "../../services/hashManager"
+import { CustomError } from "../errors/CustomError"
 
 export const loginBusiness = async (
     email: string,
@@ -10,17 +11,17 @@ export const loginBusiness = async (
 ) => {
 
     if (!email || !password) {
-        response.statusCode = 406
-        throw new Error('"email" and "password" must be provided')
+        throw new CustomError(406, '"email" and "password" must be provided')
     }
 
-    const user: user = await selectUserByEmail(email)
+    const ud = new UserDatabase("labook_users")
+
+    const user: user = await ud.selectUserByEmail(email)
 
     const passwordIsCorrect: boolean = await compare(password, user.password)
 
     if (!passwordIsCorrect) {
-        response.statusCode = 401
-        throw new Error("Invalid credentials")
+        throw new CustomError(422,"Invalid credentials")
     }
 
     const token: string = generateToken({
