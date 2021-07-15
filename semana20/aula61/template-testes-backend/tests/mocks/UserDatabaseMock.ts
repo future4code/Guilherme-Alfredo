@@ -1,0 +1,20 @@
+import { User } from "../../src/model/User";
+import { userMockAdmin, userMockNormal } from "./UserMock";
+
+
+export class UserDatabase {
+
+    public async getUserById(id:string): Promise<User | undefined> {
+        switch(id) {
+            case "id_mock_admin":
+                return userMockAdmin
+            case "id_mock_normal":
+                return userMockNormal
+            default:
+                return undefined
+        }
+    }
+
+}
+
+export default new UserDatabase()
