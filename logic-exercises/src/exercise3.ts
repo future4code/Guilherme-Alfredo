@@ -1,5 +1,5 @@
 //função que recebe uma string que pode conter somente os seguintes caracteres: '(',  ')',  '[',  ']',  '{',  '}' , e retorna true para uma string válida, e false para uma inválida.
-// só pode ser fechada pelo mesmo tipo 
+// Só pode ser fechada pelo mesmo tipo 
 
 const checaParenteses = (str: string): boolean => {
     const stack = [];
